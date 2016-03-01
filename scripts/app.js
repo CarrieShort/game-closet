@@ -1,5 +1,22 @@
 'use strict';
 
+
+
+//**check local storage **
+function checkLocalStorage (){
+  if (window.localStorage.length !==0){
+    var storedUserGame = localStorage.getItem('stored list of games');
+    var parsedUserGame= JSON.parse(storedUserGame);
+    listofGames= parsedUserGame;
+  }
+}
+
+//**local storage function to store listofGames array**
+function updateLocalStorage(){
+  var storedUserGame= JSON.stringify(listofGames);
+  localStorage.setItem('stored list of games', storedUserGame);
+}
+
 // **this variable can be deleted, here for testing function only, to represent the number of games from BuildGameItem constructor.**
 var gameDataArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17,
   18,
