@@ -90,10 +90,8 @@ h1 {
 }
 
 .button:hover {
-	hover: background #1aa4ba;
+ color: #1aa4ba;
 }
-
-
 
 /* index.html - Home Page Specific Styles */
 
