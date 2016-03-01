@@ -1,6 +1,19 @@
 'use strict';
 
+
 var containerGenerateRandomGame = document.getElementById('js-generate-random-game');
+
+// Container variable for random game generator on the home page
+var containerGenerateRandomGame = document.getElementById('js-generate-random-game');
+
+// Variables for JavaScript elements on search.html
+var containerGameSearchResults = document.getElementById('js-game-search-results');
+var containterPickGameForm = document.getElementById('js-pick-game-form');
+var buttonGameSearchSubmit = document.getElementById('js-game-search-submit');
+
+// Variables for JavaScript elements on update.html
+var containerUserGames = document.getElementById('js-user-games-container');
+var containerBuiltInGameLibrary = document.getElementById('js-built-in-game-library');
 
 // This is the constructor function that builds our board games.
 var listOfGames = [];
@@ -85,3 +98,11 @@ function renderGameItem (gameItemIndex){
 // check if userGame = true and inside call render function
 
 // check if userGame = false and inside call render function
+
+//event listener on home page for getRandomGameArrayElement
+function renderRandomGame (){
+  console.log('butt');
+}
+
+var randomGameButton = document.getElementById('js-generate-random-game-button');
+randomGameButton.addEventListener('click', renderRandomGame);
