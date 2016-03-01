@@ -1,3 +1,7 @@
+/*google font for headers and logo*/
+@import url(https://fonts.googleapis.com/css?family=Rye);
+
+
 /* Reset CSS taken from meyer web */
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
@@ -49,6 +53,26 @@ table {
 }
 
 /* Global Styles */
+
+h1 {
+	background-image: url("../img/logo-bg.png");
+	font-family: 'Rye', cursive;
+	color: white;
+	text-shadow:-1px 0 #084a5c, 0 1px #084a5c, 1px 0 #084a5c, 0 -1px #084a5c;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	height: 100px;
+	width: 125px;
+	font-size: 1.747em;
+	transform: rotate(-15deg);
+	display:flex;
+	justify-content:flex-start;
+	margin-left: 10%;
+	text-align: center;
+	padding-top: 30px;
+}
+
+
 .button {
 	display: inline-block;
 	background: #1aa4ba;
