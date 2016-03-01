@@ -1,6 +1,20 @@
 'use strict';
 
+
 var containerGenerateRandomGame = document.getElementById('js-generate-random-game');
+
+// Container variable for random game generator on the home page
+var containerGenerateRandomGame = document.getElementById('js-generate-random-game');
+
+// Variables for JavaScript elements on search.html
+var containerGameSearchResults = document.getElementById('js-game-search-results');
+var containterPickGameForm = document.getElementById('js-pick-game-form');
+var buttonGameSearchSubmit = document.getElementById('js-game-search-submit');
+
+// Variables for JavaScript elements on update.html
+var containerUserGames = document.getElementById('js-user-games-container');
+var containerBuiltInGameLibrary = document.getElementById('js-built-in-game-library');
+
 
 // This is the constructor function that builds our board games.
 var listOfGames = [];
