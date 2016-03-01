@@ -15,6 +15,7 @@ var buttonGameSearchSubmit = document.getElementById('js-game-search-submit');
 var containerUserGames = document.getElementById('js-user-games-container');
 var containerBuiltInGameLibrary = document.getElementById('js-built-in-game-library');
 
+
 // This is the constructor function that builds our board games.
 var listOfGames = [];
 function BuildGameItem(gameName, minPlayers, maxPlayers, minAge, intoxicated, time, rating, gameDescription, gameID, userGame){
@@ -36,7 +37,6 @@ function BuildGameItem(gameName, minPlayers, maxPlayers, minAge, intoxicated, ti
 
 function buildInitialListOfGames() {
   for(var i=0; i < dataForPreSelectedGames.length; i++) {
-    var indexGameID = 'gameId' + dataForPreSelectedGames[i];
     new BuildGameItem(dataForPreSelectedGames[i][0], dataForPreSelectedGames[i][1],dataForPreSelectedGames[i][2], dataForPreSelectedGames[i][3],dataForPreSelectedGames[i][4],dataForPreSelectedGames[i][5],dataForPreSelectedGames[i][6],dataForPreSelectedGames[i][7], 'gameId' + [i],false);
   }
 }
@@ -80,9 +80,20 @@ var getRandomGameArrayElement = function (arr) {
     shuffled[i] = temp;
 
     var randomGameArray = (shuffled.slice(min));
+    return randomGameArray;
   }
 };
-getRandomGameArrayElement(gameDataArray);
+
+getRandomGameArrayElement(listOfGames);
+
+function renderRandomGame(){
+  var randomGameArray = getRandomGameArrayElement(listOfGames);
+  var randomResult = renderGameItem(randomGameArray[0]);
+  containerGenerateRandomGame.textContent= '';
+  containerGenerateRandomGame.appendChild(randomResult);
+  console.log(randomResult);
+  console.log(randomGameArray);
+}
 
 // render game item html
 function renderGameItem (gameItemIndex){
@@ -107,10 +118,8 @@ function userGameTrueCheck(){
   }
 }
 
+
 //event listener on home page for getRandomGameArrayElement
-function renderRandomGame (){
-  console.log('butt');
-}
 
 userGameTrueCheck();
 var randomGameButton = document.getElementById('js-generate-random-game-button');
