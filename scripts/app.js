@@ -37,7 +37,7 @@ function BuildGameItem(gameName, minPlayers, maxPlayers, minAge, intoxicated, ti
 
 function buildInitialListOfGames() {
   for(var i=0; i < dataForPreSelectedGames.length; i++) {
-    new BuildGameItem(dataForPreSelectedGames[i][0], dataForPreSelectedGames[i][1],dataForPreSelectedGames[i][2], dataForPreSelectedGames[i][3],dataForPreSelectedGames[i][4],dataForPreSelectedGames[i][5],dataForPreSelectedGames[i][6],dataForPreSelectedGames[i][7], 'gameId' + dataForPreSelectedGames[i],false);
+    new BuildGameItem(dataForPreSelectedGames[i][0], dataForPreSelectedGames[i][1],dataForPreSelectedGames[i][2], dataForPreSelectedGames[i][3],dataForPreSelectedGames[i][4],dataForPreSelectedGames[i][5],dataForPreSelectedGames[i][6],dataForPreSelectedGames[i][7], 'gameId' + [i],false);
   }
 }
 //This should be called only when local storage blank
