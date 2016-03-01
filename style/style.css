@@ -70,6 +70,7 @@ h1 {
 	margin-left: 10%;
 	text-align: center;
 	padding-top: 30px;
+	position: absolute;
 }
 
 
@@ -93,16 +94,6 @@ h1 {
  color: #1aa4ba;
 }
 
-/* index.html - Home Page Specific Styles */
-
-/* update.html - Edit Game Closet Specific Styles */
-
-/* search.html Search Game Closet Specific Styles */
-
-/* search.html About Players Specific Styles */
-
-/* Media Queries for Responsive */
-
 header {
 width: 100%;
 height: 100%;
@@ -110,6 +101,7 @@ background-color: #c1c259;
 display: flex;
 flex-direction: row;
 justify-content: space-between;
+margin-top: 30px;
 }
 
 nav {
@@ -125,3 +117,13 @@ nav ul li a {
 	color: #FFFFFF;
 	text-decoration: none;
 }
+
+/* index.html - Home Page Specific Styles */
+
+/* update.html - Edit Game Closet Specific Styles */
+
+/* search.html Search Game Closet Specific Styles */
+
+/* search.html About Players Specific Styles */
+
+/* Media Queries for Responsive */

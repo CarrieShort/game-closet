@@ -1,5 +1,5 @@
 'use strict';
-
+var listOfGames = [];
 
 var containerGenerateRandomGame = document.getElementById('js-generate-random-game');
 
@@ -17,7 +17,6 @@ var containerBuiltInGameLibrary = document.getElementById('js-built-in-game-libr
 
 
 // This is the constructor function that builds our board games.
-var listOfGames = [];
 function BuildGameItem(gameName, minPlayers, maxPlayers, minAge, intoxicated, time, rating, gameDescription, gameID, userGame){
   this.gameName = gameName;
   this.minPlayers = minPlayers;
@@ -40,8 +39,6 @@ function buildInitialListOfGames() {
     new BuildGameItem(dataForPreSelectedGames[i][0], dataForPreSelectedGames[i][1],dataForPreSelectedGames[i][2], dataForPreSelectedGames[i][3],dataForPreSelectedGames[i][4],dataForPreSelectedGames[i][5],dataForPreSelectedGames[i][6],dataForPreSelectedGames[i][7], 'gameId' + [i],false);
   }
 }
-//This should be called only when local storage blank
-buildInitialListOfGames();
 
 //**check local storage **
 function checkLocalStorage (){
@@ -58,15 +55,9 @@ function updateLocalStorage(){
   localStorage.setItem('stored list of games', storedUserGame);
 }
 
-// **this variable can be deleted, here for testing function only, to represent the number of games from BuildGameItem constructor.**
-var gameDataArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17,
-  18,
-  19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29
-];
-
 // **this function below is going to take our game array and shuffle it as well as use math.random to ensure that there are no duplicate items. This is especially helpful if we choose to return more than one iter. However; this may not be useful at all for single item returns.**
 
-var getRandomGameArrayElement = function (arr) {
+function getRandomGameArrayElement(arr) {
   var shuffled = arr.slice(0),
     i = arr.length,
     min = i - 1,
@@ -82,17 +73,6 @@ var getRandomGameArrayElement = function (arr) {
     var randomGameArray = (shuffled.slice(min));
     return randomGameArray;
   }
-};
-
-getRandomGameArrayElement(listOfGames);
-
-function renderRandomGame(){
-  var randomGameArray = getRandomGameArrayElement(listOfGames);
-  var randomResult = renderGameItem(randomGameArray[0]);
-  containerGenerateRandomGame.textContent= '';
-  containerGenerateRandomGame.appendChild(randomResult);
-  console.log(randomResult);
-  console.log(randomGameArray);
 }
 
 // render game item html
@@ -106,21 +86,43 @@ function renderGameItem (gameItemIndex){
   return gameItemContainer;
 }
 
-// check if userGame = true and inside call render function
+// Function that renders a random game from the listOfGames array
+function renderRandomGame(){
+  var randomGameArray = getRandomGameArrayElement(listOfGames);
+  var randomResult = renderGameItem(randomGameArray[0]);
+  if(containerGenerateRandomGame){
+    containerGenerateRandomGame.textContent= '';
+    containerGenerateRandomGame.appendChild(randomResult);
+  }
+  console.log(randomResult);
+  console.log(randomGameArray);
+}
+
+// This function checks if the games are in the user or public library and renders them in the correct location on update.html
 function userGameTrueCheck(){
   for(var i = 0; i < listOfGames.length; i++){
     var renderedGame = renderGameItem(listOfGames[i]);
     if(listOfGames[i].userGame === true){
-      containerUserGames.appendChild(renderedGame);
+      if(containerUserGames){
+        containerUserGames.appendChild(renderedGame);
+      }
     } else {
-      containerBuiltInGameLibrary.appendChild(renderedGame);
+      if(containerBuiltInGameLibrary){
+        containerBuiltInGameLibrary.appendChild(renderedGame);
+      }
     }
   }
 }
 
+//This should be called only when local storage blank
+buildInitialListOfGames();
+
+// Call Render Functions
+userGameTrueCheck();
 
 //event listener on home page for getRandomGameArrayElement
 
-userGameTrueCheck();
 var randomGameButton = document.getElementById('js-generate-random-game-button');
-randomGameButton.addEventListener('click', renderRandomGame);
+if(randomGameButton){
+  randomGameButton.addEventListener('click', renderRandomGame);
+}
