@@ -49,6 +49,27 @@ table {
 }
 
 /* Global Styles */
+.button {
+	display: inline-block;
+	background: #1aa4ba;
+  color: #FFF;
+	font: inherit;
+	font-size: 16px;
+	height: 40px;
+  width: 170px;
+	line-height: 40px;
+	margin: 25px 25px;
+	padding: 8px 8px;
+	text-align: center;
+	border: 5px;
+	transition: all 0.3s ease 0s;
+}
+
+.button:hover {
+	hover: background #1aa4ba;
+}
+
+
 
 /* index.html - Home Page Specific Styles */
 
