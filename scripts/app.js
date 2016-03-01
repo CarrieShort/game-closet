@@ -1,6 +1,6 @@
 'use strict';
 
-var containerGenerateRandomGame = document.getElementbyId('js-generate-random-game');
+var containerGenerateRandomGame = document.getElementById('js-generate-random-game');
 
 // This is the constructor function that builds our board games.
 var listOfGames = [];
@@ -69,3 +69,11 @@ var getRandomGameArrayElement = function (arr) {
   }
 };
 getRandomGameArrayElement(gameDataArray);
+
+//event listener on home page for getRandomGameArrayElement
+function renderRandomGame (){
+  console.log('butt');
+}
+
+var randomGameButton = document.getElementById('js-generate-random-game-button');
+randomGameButton.addEventListener('click', renderRandomGame);
