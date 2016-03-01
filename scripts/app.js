@@ -83,6 +83,7 @@ var getRandomGameArrayElement = function (arr) {
     return randomGameArray;
   }
 };
+
 getRandomGameArrayElement(listOfGames);
 
 function renderRandomGame(){
@@ -94,7 +95,32 @@ function renderRandomGame(){
   console.log(randomGameArray);
 }
 
+// render game item html
+function renderGameItem (gameItemIndex){
+  var gameItemContainer = document.createElement('article');
+  var gameItemContent = '<h2>'+ gameItemIndex.gameName + '</h2><p class="features"><i class="fa fa-user"></i>' + gameItemIndex.minPlayers + '-' + gameItemIndex.maxPlayers +' <i class="fa fa-clock-o"></i>'+ gameItemIndex.time +' <i class="fa-arrow-circle-up"></i>'+ gameItemIndex.minAge +' years and up</p><p class="description">' + gameItemIndex.gameDescription + '</p>' ;
+
+  gameItemContainer.id = gameItemIndex.gameID;
+  gameItemContainer.setAttribute('class','game-item');
+  gameItemContainer.innerHTML = gameItemContent;
+  return gameItemContainer;
+}
+
+// check if userGame = true and inside call render function
+function userGameTrueCheck(){
+  for(var i = 0; i < listOfGames.length; i++){
+    var renderedGame = renderGameItem(listOfGames[i]);
+    if(listOfGames[i].userGame === true){
+      containerUserGames.appendChild(renderedGame);
+    } else {
+      containerBuiltInGameLibrary.appendChild(renderedGame);
+    }
+  }
+}
+
+
 //event listener on home page for getRandomGameArrayElement
 
+userGameTrueCheck();
 var randomGameButton = document.getElementById('js-generate-random-game-button');
 randomGameButton.addEventListener('click', renderRandomGame);
