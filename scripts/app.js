@@ -1,5 +1,6 @@
 'use strict';
 
+var containerGenerateRandomGame = document.getElementbyId('js-generate-random-game');
 
 // This is the constructor function that builds our board games.
 var listOfGames = [];
