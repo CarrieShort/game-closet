@@ -80,3 +80,26 @@ table {
 /* search.html About Players Specific Styles */
 
 /* Media Queries for Responsive */
+
+header {
+width: 100%;
+height: 100%;
+background-color: #c1c259;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+}
+
+nav {
+	padding: 10px 20px 10px 20px;
+}
+
+nav ul li {
+	display: inline-block;
+	padding-left: 50px;
+}
+
+nav ul li a {
+	color: #FFFFFF;
+	text-decoration: none;
+}
