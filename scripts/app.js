@@ -26,13 +26,13 @@ function checkLocalStorage (){
   if (window.localStorage.length !==0){
     var storedUserGame = localStorage.getItem('stored list of games');
     var parsedUserGame= JSON.parse(storedUserGame);
-    listofGames= parsedUserGame;
+    listOfGames= parsedUserGame;
   }
 }
 
 //**local storage function to store listofGames array**
 function updateLocalStorage(){
-  var storedUserGame= JSON.stringify(listofGames);
+  var storedUserGame= JSON.stringify(listOfGames);
   localStorage.setItem('stored list of games', storedUserGame);
 }
 
