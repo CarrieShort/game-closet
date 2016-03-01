@@ -1,6 +1,6 @@
 'use strict';
 
-var containerGenerateRandomGame = document.getElementbyId('js-generate-random-game');
+var containerGenerateRandomGame = document.getElementById('js-generate-random-game');
 
 // This is the constructor function that builds our board games.
 var listOfGames = [];
@@ -23,7 +23,8 @@ function BuildGameItem(gameName, minPlayers, maxPlayers, minAge, intoxicated, ti
 
 function buildInitialListOfGames() {
   for(var i=0; i < dataForPreSelectedGames.length; i++) {
-    new BuildGameItem(dataForPreSelectedGames[i][0], dataForPreSelectedGames[i][1],dataForPreSelectedGames[i][2], dataForPreSelectedGames[i][3],dataForPreSelectedGames[i][4],dataForPreSelectedGames[i][5],dataForPreSelectedGames[i][6],dataForPreSelectedGames[i][7], 'gameId' + dataForPreSelectedGames[i],false);
+    var indexGameID = 'gameId' + dataForPreSelectedGames[i];
+    new BuildGameItem(dataForPreSelectedGames[i][0], dataForPreSelectedGames[i][1],dataForPreSelectedGames[i][2], dataForPreSelectedGames[i][3],dataForPreSelectedGames[i][4],dataForPreSelectedGames[i][5],dataForPreSelectedGames[i][6],dataForPreSelectedGames[i][7], 'gameId' + [i],false);
   }
 }
 //This should be called only when local storage blank
@@ -69,3 +70,18 @@ var getRandomGameArrayElement = function (arr) {
   }
 };
 getRandomGameArrayElement(gameDataArray);
+
+// render object function
+function renderGameItem (gameItemIndex){
+  console.log(gameItemIndex);
+  var gameItemContainer = document.createElement('article');
+  gameItemContainer.id = gameItemIndex.gameID;
+  gameItemContainer.setAttribute('class','game-item');
+  console.log(gameItemIndex.gameId);
+  console.log(gameItemContainer);
+
+}
+
+// check if userGame = true and inside call render function
+
+// check if userGame = false and inside call render function
