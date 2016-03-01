@@ -15,7 +15,6 @@ var buttonGameSearchSubmit = document.getElementById('js-game-search-submit');
 var containerUserGames = document.getElementById('js-user-games-container');
 var containerBuiltInGameLibrary = document.getElementById('js-built-in-game-library');
 
-
 // This is the constructor function that builds our board games.
 var listOfGames = [];
 function BuildGameItem(gameName, minPlayers, maxPlayers, minAge, intoxicated, time, rating, gameDescription, gameID, userGame){
@@ -37,7 +36,8 @@ function BuildGameItem(gameName, minPlayers, maxPlayers, minAge, intoxicated, ti
 
 function buildInitialListOfGames() {
   for(var i=0; i < dataForPreSelectedGames.length; i++) {
-    new BuildGameItem(dataForPreSelectedGames[i][0], dataForPreSelectedGames[i][1],dataForPreSelectedGames[i][2], dataForPreSelectedGames[i][3],dataForPreSelectedGames[i][4],dataForPreSelectedGames[i][5],dataForPreSelectedGames[i][6],dataForPreSelectedGames[i][7], 'gameId' + dataForPreSelectedGames[i],false);
+    var indexGameID = 'gameId' + dataForPreSelectedGames[i];
+    new BuildGameItem(dataForPreSelectedGames[i][0], dataForPreSelectedGames[i][1],dataForPreSelectedGames[i][2], dataForPreSelectedGames[i][3],dataForPreSelectedGames[i][4],dataForPreSelectedGames[i][5],dataForPreSelectedGames[i][6],dataForPreSelectedGames[i][7], 'gameId' + [i],false);
   }
 }
 //This should be called only when local storage blank
@@ -83,6 +83,21 @@ var getRandomGameArrayElement = function (arr) {
   }
 };
 getRandomGameArrayElement(gameDataArray);
+
+// render game item html
+function renderGameItem (gameItemIndex){
+  var gameItemContainer = document.createElement('article');
+  var gameItemContent = '<h2>'+ gameItemIndex.gameName + '</h2><p class="features"><i class="fa fa-user"></i>' + gameItemIndex.minPlayers + '-' + gameItemIndex.maxPlayers +' <i class="fa fa-clock-o"></i>'+ gameItemIndex.time +' <i class="fa-arrow-circle-up"></i>'+ gameItemIndex.minAge +' years and up</p><p class="description">' + gameItemIndex.gameDescription + '</p>' ;
+
+  gameItemContainer.id = gameItemIndex.gameID;
+  gameItemContainer.setAttribute('class','game-item');
+  gameItemContainer.innerHTML = gameItemContent;
+
+}
+
+// check if userGame = true and inside call render function
+
+// check if userGame = false and inside call render function
 
 //event listener on home page for getRandomGameArrayElement
 function renderRandomGame (){
