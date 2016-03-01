@@ -1,5 +1,8 @@
 'use strict';
 
+
+var containerGenerateRandomGame = document.getElementById('js-generate-random-game');
+
 // Container variable for random game generator on the home page
 var containerGenerateRandomGame = document.getElementById('js-generate-random-game');
 
@@ -80,3 +83,11 @@ var getRandomGameArrayElement = function (arr) {
   }
 };
 getRandomGameArrayElement(gameDataArray);
+
+//event listener on home page for getRandomGameArrayElement
+function renderRandomGame (){
+  console.log('butt');
+}
+
+var randomGameButton = document.getElementById('js-generate-random-game-button');
+randomGameButton.addEventListener('click', renderRandomGame);
