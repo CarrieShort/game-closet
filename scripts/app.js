@@ -112,7 +112,6 @@ function renderRandomGame (){
   console.log('butt');
 }
 
+userGameTrueCheck();
 var randomGameButton = document.getElementById('js-generate-random-game-button');
 randomGameButton.addEventListener('click', renderRandomGame);
-
-userGameTrueCheck();
