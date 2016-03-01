@@ -53,6 +53,7 @@ table {
 }
 
 /* Global Styles */
+
 h1 {
 	background-image: url("../img/logo-bg.png");
 	font-family: 'Rye', cursive;
@@ -72,6 +73,28 @@ h1 {
 }
 
 
+.button {
+	display: inline-block;
+	background: #1aa4ba;
+  color: #FFF;
+	font: inherit;
+	font-size: 16px;
+	height: 40px;
+  width: 170px;
+	line-height: 40px;
+	margin: 25px 25px;
+	padding: 8px 8px;
+	text-align: center;
+	border: 5px;
+	transition: all 0.3s ease 0s;
+}
+
+.button:hover {
+	hover: background #1aa4ba;
+}
+
+
+
 /* index.html - Home Page Specific Styles */
 
 /* update.html - Edit Game Closet Specific Styles */
@@ -81,3 +104,26 @@ h1 {
 /* search.html About Players Specific Styles */
 
 /* Media Queries for Responsive */
+
+header {
+width: 100%;
+height: 100%;
+background-color: #c1c259;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+}
+
+nav {
+	padding: 10px 20px 10px 20px;
+}
+
+nav ul li {
+	display: inline-block;
+	padding-left: 50px;
+}
+
+nav ul li a {
+	color: #FFFFFF;
+	text-decoration: none;
+}
