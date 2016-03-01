@@ -19,9 +19,19 @@
   </header>
     <section class="content-area search-content-area">
       <section id="js-game-search-results">
-    <!-- <form id = "pick-game-form"> -->
-      <!-- <label for= ////> How Many </label>
-      <input name= ///> -->
+    <form id = "pick-game-form">
+      <fieldset>
+      <label for= "js-form-players"> How many friends will play?</label>
+      <input type="number" name="quantity" maximum="30">
+      <label for= "js-form-age"> What is the age of youngest player?</label>
+      <input type="number" name="age" minimum="3">
+      <label for= "js-form-time"> How long would you like to play?</label>
+      <input type="number" name="time" minimum="10">
+      <label for= "js-form-intoxicted"> Are you intoxicated? Or do you plan to be?</label>
+      <input type="radio" name="intoxicated" value="yes"> Yes<br>
+      <input type="radio" name="intoxicated" value="no"> No<br>
+      <button type="submit" id="game-submit">Submit</button>
+    </fieldset>
     </form>
   </section>
   </section>
