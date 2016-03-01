@@ -17,8 +17,15 @@ function BuildGameItem(gameName, minPlayers, maxPlayers, minAge, intoxicated, ti
   listOfGames.push(this);
 }
 
-// This is an example of our constructors. We will be making an initiate function so we do not have to do this.
-var gameApplesToApples = new BuildGameItem('Apples to Apples', 4, 10, 12, true, 30, 6, 'description', 'apples', false);
+// Function to replace instantiatians of buildListOfGames
+
+function buildInitialListOfGames() {
+  for(var i=0; i < dataForPreSelectedGames.length; i++) {
+    new BuildGameItem(dataForPreSelectedGames[i][0], dataForPreSelectedGames[i][1],dataForPreSelectedGames[i][2], dataForPreSelectedGames[i][3],dataForPreSelectedGames[i][4],dataForPreSelectedGames[i][5],dataForPreSelectedGames[i][6],dataForPreSelectedGames[i][7], 'gameId' + dataForPreSelectedGames[i],false);
+  }
+}
+//This should be called only when local storage blank
+buildInitialListOfGames();
 
 // **this variable can be deleted, here for testing function only, to represent the number of games from BuildGameItem constructor.**
 var gameDataArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17,
