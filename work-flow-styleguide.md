@@ -1,4 +1,4 @@
-**#Work-Flow Style Guide**
+# **Work-Flow Style Guide**
 ---
 # Table of Contents
   * [Naming Conventions](#naming-conventions)
@@ -12,9 +12,9 @@
 
 
 
-  **##Naming Conventions <a id="naming-conventions"></a>
+# **Naming Conventions <a id="naming-conventions"></a>**
   ---
-  **#HTML and CSS <a id="html-css"></a>
+## **HTML and CSS <a id="html-css"></a>**
 
     * We will utilize a single style.css for all of our HTML pages. As such we want to use as much of it as possible to keep the page appearance consistent and uniform.
     * All names will be written using kabob-case
@@ -23,8 +23,9 @@
     * Class names such as style-bold will be used repeatedly so be mindful about your class names.
 
 
-    **#JavaScript  <a id="javascript"></a>
+##  **JavaScript  <a id="javascript"></a>**
 ---
+
     * All names will be written using camelCase.
     * Variable names need to clearly identify context: '<var whatVariableIs = 'item being represented'>'
     * Function Names need to explain what the function is doing: '<function thisFunctionGeneratesWidgets();>'
@@ -32,10 +33,10 @@
     * Our main constructor function will be named BuildGameItem and future instances and prototypes will follow this name structure.
     *Commenting:
       + As you are writing your code you should be commenting before each function to indicate how it will work and what data it will produce.
-      + Commenting is also expected before new instance creation to describe the group of variables used.
+      + Commenting is also expected before new instance creation to describe the group of variables used.*
 
 
-**##JavaScript Structure  <a id="javascript-structure"></a>
+##  **JavaScript Structure  <a id="javascript-structure"></a>**
 ---
 
       * 'use strict'; will appear at the top of each js document.
@@ -49,7 +50,7 @@
         + Lastly, eventListeners, unless needed inside of function scope.
 
 
-**##CSS Structure <a id="css-structure"></a>
+##  **CSS Structure <a id="css-structure"></a>**
 ---
     * We will use -reset at the top of the CSS
     * Global styles will be utilized as much as possible to keep code dry.
@@ -60,15 +61,16 @@
     * Media-Query will be located at the bottom of the CSS document.
 
 
-  **##HTML Structure <a id="html-structure"></a>
+## **HTML Structure <a id="html-structure"></a>**
   ---
     * Refer to these images for page-specific content layout.
       + Sub-Page Global Layout on the left.
       + Main Home Page Layout on the right.
+
     * ![HTML-Mockup](http://i.picresize.com/images/2016/02/29/U6qe.png)   
 
 
-    **##Git Guidelines <a id="git-guidelines"></a>
+##  **Git Guidelines <a id="git-guidelines"></a>**
     ---
 
       * Branch naming will follow this kebob-style format:
@@ -86,11 +88,11 @@
       * Use Commit messages to document changes and work completed as well as notification of naming changes as described above.
 
 
-      **##Group Conduct <a id="group-conduct"></a>
+##    **Group Conduct <a id="group-conduct"></a>**
       ---
 
       * Be kind to your fellow project collaborators and notify the group in slack, by email, phone, or whatever means appropriate if you will miss class for any amount of time during project week.
       * Please refer to this styleguide to research your questions before asking fellow group members for assistance.
       * Please follow the above guidelines to keep your work-flow in line with the whole group, doing this will avoid merge conflicts and save valuable time handling bugs, etc.
       * Be open to and willing to provide constructive feedback.
-      * Try to remain flexible with your mindset about the work involved in this project. We are all here to learn from each other and the class as a whole. 
+      * Try to remain flexible with your mindset about the work involved in this project. We are all here to learn from each other and the class as a whole.

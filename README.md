@@ -1,4 +1,4 @@
-**#Game Closet**
+# **Game Closet**
 ---
 Game Closet is a user guide allows you to digitally organize your game library and helps you choose a game to play based on the number of players, age of players, time you want to spend and other features.
 ---
@@ -11,7 +11,7 @@ Game Closet is a user guide allows you to digitally organize your game library a
 ---
 
 
-**##User Stories <a id="user-stories"></a>
+## **User Stories <a id="user-stories"></a>**
 
 * As a User I want to:
 + Find a game that I would like to play based on my interests or one which is randomly generated for me with no information collected.
@@ -25,7 +25,7 @@ Game Closet is a user guide allows you to digitally organize your game library a
 + Ability to customize game selection experience.
 ---
 
-**##Developer <a id="developer"></a>
+## **Developer <a id="developer"></a>**
 
 * As a Developer I want to:
 + Produce an app which engages the user and creates a fun way to get results and enter their data.
@@ -38,17 +38,17 @@ Game Closet is a user guide allows you to digitally organize your game library a
 + Give the returning User the option to edit their closet or get a random game from the home page based on their previously entered information.
 ---
 
-**#Stretch Goals <a id="stretch-goals"></a>
+# **Stretch Goals <a id="stretch-goals"></a>**
 
 
-**##High-Priority <a id="high-priority"></a>
+## **High-Priority <a id="high-priority"></a>**
 ---
 1. Add a User form to allow them to enter a new game into the stored games.
   * Test form generated data against stored data to determine whether new User game already exists.
 2. Show recently played games on the home page for returning users based on local storage data.
 3. Add game ratings, explain rating system.
 
-*#Lower-priority <a id="lower-priority"></a>
+## *Lower-priority <a id="lower-priority"></a>*
 ---
 1. Display number of times a closet game has been selected for a user by the game generator.
 2. Add images for each game stored in the closet.
