@@ -92,12 +92,20 @@ function renderGameItem (gameItemIndex){
   gameItemContainer.id = gameItemIndex.gameID;
   gameItemContainer.setAttribute('class','game-item');
   gameItemContainer.innerHTML = gameItemContent;
-
+  return gameItemContainer;
 }
 
 // check if userGame = true and inside call render function
-
-// check if userGame = false and inside call render function
+function userGameTrueCheck(){
+  for(var i = 0; i < listOfGames.length; i++){
+    var renderedGame = renderGameItem(listOfGames[i]);
+    if(listOfGames[i].userGame === true){
+      containerUserGames.appendChild(renderedGame);
+    } else {
+      containerBuiltInGameLibrary.appendChild(renderedGame);
+    }
+  }
+}
 
 //event listener on home page for getRandomGameArrayElement
 function renderRandomGame (){
@@ -106,3 +114,5 @@ function renderRandomGame (){
 
 var randomGameButton = document.getElementById('js-generate-random-game-button');
 randomGameButton.addEventListener('click', renderRandomGame);
+
+userGameTrueCheck();
