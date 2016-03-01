@@ -71,14 +71,14 @@ var getRandomGameArrayElement = function (arr) {
 };
 getRandomGameArrayElement(gameDataArray);
 
-// render object function
+// render game item html
 function renderGameItem (gameItemIndex){
-  console.log(gameItemIndex);
   var gameItemContainer = document.createElement('article');
+  var gameItemContent = '<h2>'+ gameItemIndex.gameName + '</h2><p class="features"><i class="fa fa-user"></i>' + gameItemIndex.minPlayers + '-' + gameItemIndex.maxPlayers +' <i class="fa fa-clock-o"></i>'+ gameItemIndex.time +' <i class="fa-arrow-circle-up"></i>'+ gameItemIndex.minAge +' years and up</p><p class="description">' + gameItemIndex.gameDescription + '</p>' ;
+
   gameItemContainer.id = gameItemIndex.gameID;
   gameItemContainer.setAttribute('class','game-item');
-  console.log(gameItemIndex.gameId);
-  console.log(gameItemContainer);
+  gameItemContainer.innerHTML = gameItemContent;
 
 }
 
