@@ -1,5 +1,25 @@
 'use strict';
 
+// This is the constructor function that builds our board games.
+var listOfGames = [];
+function BuildGameItem(gameName, minPlayers, maxPlayers, minAge, intoxicated, time, rating, gameDescription, gameID, userGame){
+  this.gameName = gameName;
+  this.minPlayers = minPlayers;
+  this.maxPlayers = maxPlayers;
+  this.minAge = minAge;
+  this.intoxicated = intoxicated;
+  this.time = time;
+  this.rating = rating;
+  this.gameDescription = gameDescription;
+  this.gameID = gameID;
+  this.userGame = userGame;
+
+  listOfGames.push(this);
+}
+
+// This is an example of our constructors. We will be making an initiate function so we do not have to do this.
+var gameApplesToApples = new BuildGameItem('Apples to Apples', 4, 10, 12, true, 30, 6, 'description', 'apples', false);
+
 // **this variable can be deleted, here for testing function only, to represent the number of games from BuildGameItem constructor.**
 var gameDataArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17,
   18,
