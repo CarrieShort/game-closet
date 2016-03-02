@@ -86,6 +86,13 @@ h2 {
 	margin: 2%;
 	font-size: 1.747em;
 }
+h3 {
+	font-family:'Rye', cursive;
+	color: #084a5c;
+	text-align: center;
+	margin: 2%;
+	font-size: 1.747em;
+}
 .button {
 	display: inline-block;
 	background: #1aa4ba;
@@ -319,8 +326,36 @@ nav ul li a {
 	width: 80%;
 	bottom: 0;
 }
-/* update.html - Edit Game Closet Specific Styles */
+/* update.html - Update Game Closet Specific Styles */
+.content-area-update-content-area {
+	display:flex;
+	flex-direction: row;
+	justify-content: center;
+	padding-top: 20px;
+}
 
+.content-area-update-content-area article {
+	display: inline-flex;
+	flex-direction: column;
+	background-color: white;
+	border: 5px solid #084a5c;
+	width: 80%;
+	height: 40%;
+	margin: 2%;
+	padding: 40px;
+}
+.user-games h2{
+	text-align: left;
+	padding-top: 50px;
+	margin: 2%;
+}
+
+.library {
+}
+
+.library h2{
+	text-align: center;
+}
 /* search.html Search Game Closet Specific Styles */
 .content-area-search-content-area {
 	padding-top: 60px;
