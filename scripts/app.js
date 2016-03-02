@@ -201,7 +201,6 @@ function checkForMatches(array, input1, input2, input3) {
   return searchResults;
 }
 // **This is the event handler for the submission of the form by user**
-
 function searchFormDataHandler(event) {
   event.preventDefault();
   ('form submitted!');
@@ -230,7 +229,10 @@ function searchFormDataHandler(event) {
     updateLocalStorage(soberMatches, 'stored list of search results');
     ('sober matches=' + soberMatches);
   }
+  var formValueArray = [inputPlayers, inputAge, inputTime, inputIntoxicated];
+  updateLocalStorage(formValueArray, 'This is the search form data');
 }
+
 //This should be called only when local storage blank
 buildInitialListOfGames();
 
