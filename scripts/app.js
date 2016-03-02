@@ -45,6 +45,7 @@ function checkLocalStorage (arrayToBeStored, keyName){
   if (window.localStorage.length !==0){
     var storedUserGame = localStorage.getItem(keyName);
     var parsedUserGame= JSON.parse(storedUserGame);
+    console.log(parsedUserGame);
     arrayToBeStored= parsedUserGame;
   }
 }
@@ -116,25 +117,8 @@ function userGameTrueCheck(){
   }
 }
 
-//This should be called only when local storage blank
-buildInitialListOfGames();
-
-// Call Render Functions
-userGameTrueCheck();
-
-//Call local storage
-checkLocalStorage(listOfGames, 'stored list of games');
-updateLocalStorage(listOfGames, 'stored list of games');
-
-//event listener on home page for getRandomGameArrayElement
-
-var randomGameButton = document.getElementById('js-generate-random-game-button');
-if(randomGameButton){
-  randomGameButton.addEventListener('click', renderRandomGame);
-}
-
 //event listeners for update.html
-function toggleUserGameVale(toggleTarget){
+function toggleUserGameValue(toggleTarget){
   console.log(toggleTarget);
   if(toggleTarget.userGame === true){
     toggleTarget.userGame = false;
@@ -153,10 +137,29 @@ function moveGameItem(){
   console.log('Item was clicked! <3');
   for(var i = 0; i < listOfGames.length; i++){
     if(clickedId === listOfGames[i].gameID){
-      toggleUserGameVale(listOfGames[i]);
+      toggleUserGameValue(listOfGames[i]);
     }
   }
+  updateLocalStorage(listOfGames, 'stored list of games');
 }
+
+//This should be called only when local storage blank
+buildInitialListOfGames();
+
+// Call Render Functions
+userGameTrueCheck();
+
+//Call local storage
+checkLocalStorage(listOfGames, 'stored list of games');
+updateLocalStorage(listOfGames, 'stored list of games');
+
+//event listener on home page for getRandomGameArrayElement
+
+var randomGameButton = document.getElementById('js-generate-random-game-button');
+if(randomGameButton){
+  randomGameButton.addEventListener('click', renderRandomGame);
+}
+
 
 var containerGameItem = document.getElementsByClassName('game-item');
 for(var i = 0; i < containerGameItem.length; i++){
