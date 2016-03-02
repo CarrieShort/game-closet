@@ -35,10 +35,16 @@
       </select>
       <label for= "intoxicated"> Are you intoxicated? Or do you plan to be?</label>
       <div class="intoxicated-content">
-      <input type="radio" name="intoxicated" value="yes"> Yes
-      <input type="radio" name="intoxicated" value="no"> No <br>
-      </div>
-      <button type="submit">Submit</button>
+          <div class="intoxicated-content-div">
+          <label for="yes">Yes</label>
+          <input type="radio" name="intoxicated" value="yes">
+        </div>
+        <div class="intoxicated-content-div">
+          <label for="no">No</label>
+          <input type="radio" name="intoxicated" value="no">
+        </div>
+      </div> <br>
+      <button type="submit" class="pick-game-button">Update Game Closet</button>
     </fieldset>
     </form>
   </section>
