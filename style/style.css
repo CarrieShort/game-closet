@@ -67,10 +67,12 @@ h1 {
 	transform: rotate(-15deg);
 	display:flex;
 	justify-content:flex-start;
-	margin-left: 10%;
+	margin-left: 20px;
 	text-align: center;
 	padding-top: 30px;
+	top: 0;
 	position: absolute;
+	left: 0;
 }
 
 
@@ -100,8 +102,8 @@ height: 100%;
 background-color: #c1c259;
 display: flex;
 flex-direction: row;
-justify-content: space-between;
-margin-top: 30px;
+justify-content: flex-end;
+margin-top: 40px;
 }
 
 nav {
