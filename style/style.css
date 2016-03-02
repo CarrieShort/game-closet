@@ -275,20 +275,37 @@ nav ul li a {
 	height: 67px;
 	top:-67px;
 }
-.content-area.home-content-area{
+
+
+.content-area.home-content-area {
 	display:flex;
 	flex-direction: row;
+	justify-content: center;
 }
 .content-area.home-content-area article {
 	background-color: white;
 	flex-direction: column;
-	align-self: center;
-	justify-content: center;
 	border: 5px solid #084a5c;
-	width: 20%;
+	align-items: stretch;
+	width: 35%;
+	min-height: 35%;
+	margin: 2%;
 }
 
 .content-area.home-content-area img {
+	margin-left: 4%;
+	margin-top: 5%;
+	width: 95%;
+	height: 75%;
+}
+.content-area.home-content-area p {
+	text-align: center;
+	color: #979797;
+	margin: 1%;
+}
+.content-area.home-content-area article .button {
+	margin-left: 20%;
+	align-content: flex-end;
 }
 /* update.html - Edit Game Closet Specific Styles */
 
@@ -307,14 +324,6 @@ nav ul li a {
 	width: 55%;
 
 }
-/*.content-area.about-content h2 {
-	font-family:'Rye', cursive;
-	color: #084a5c;
-	text-align: center;
-	margin: 2%;
-	font-size: 1.747em;
-
-}*/
 .content-area.about-content img{
 	display:flex;
 	align-content: center;
