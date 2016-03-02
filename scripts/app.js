@@ -41,19 +41,22 @@ function buildInitialListOfGames() {
 }
 
 //**check local storage **
-function checkLocalStorage (){
+function checkLocalStorage (arrayToBeStored, keyName){
   if (window.localStorage.length !==0){
-    var storedUserGame = localStorage.getItem('stored list of games');
+    var storedUserGame = localStorage.getItem(keyName);
     var parsedUserGame= JSON.parse(storedUserGame);
-    listOfGames= parsedUserGame;
+    console.log(parsedUserGame);
+    arrayToBeStored= parsedUserGame;
   }
 }
 
 //**local storage function to store listofGames array**
-function updateLocalStorage(){
-  var storedUserGame= JSON.stringify(listOfGames);
-  localStorage.setItem('stored list of games', storedUserGame);
+function updateLocalStorage(arrayToBeStored, keyName){
+  var storedUserGame= JSON.stringify(arrayToBeStored);
+  localStorage.setItem(keyName, storedUserGame);
 }
+
+
 
 // **this function below is going to take our game array and shuffle it as well as use math.random to ensure that there are no duplicate items. This is especially helpful if we choose to return more than one iter. However; this may not be useful at all for single item returns.**
 
@@ -114,21 +117,8 @@ function userGameTrueCheck(){
   }
 }
 
-//This should be called only when local storage blank
-buildInitialListOfGames();
-
-// Call Render Functions
-userGameTrueCheck();
-
-//event listener on home page for getRandomGameArrayElement
-
-var randomGameButton = document.getElementById('js-generate-random-game-button');
-if(randomGameButton){
-  randomGameButton.addEventListener('click', renderRandomGame);
-}
-
 //event listeners for update.html
-function toggleUserGameVale(toggleTarget){
+function toggleUserGameValue(toggleTarget){
   console.log(toggleTarget);
   if(toggleTarget.userGame === true){
     toggleTarget.userGame = false;
@@ -147,10 +137,29 @@ function moveGameItem(){
   console.log('Item was clicked! <3');
   for(var i = 0; i < listOfGames.length; i++){
     if(clickedId === listOfGames[i].gameID){
-      toggleUserGameVale(listOfGames[i]);
+      toggleUserGameValue(listOfGames[i]);
     }
   }
+  updateLocalStorage(listOfGames, 'stored list of games');
 }
+
+//This should be called only when local storage blank
+buildInitialListOfGames();
+
+// Call Render Functions
+userGameTrueCheck();
+
+//Call local storage
+checkLocalStorage(listOfGames, 'stored list of games');
+updateLocalStorage(listOfGames, 'stored list of games');
+
+//event listener on home page for getRandomGameArrayElement
+
+var randomGameButton = document.getElementById('js-generate-random-game-button');
+if(randomGameButton){
+  randomGameButton.addEventListener('click', renderRandomGame);
+}
+
 
 var containerGameItem = document.getElementsByClassName('game-item');
 for(var i = 0; i < containerGameItem.length; i++){
