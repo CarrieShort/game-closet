@@ -126,3 +126,12 @@ var randomGameButton = document.getElementById('js-generate-random-game-button')
 if(randomGameButton){
   randomGameButton.addEventListener('click', renderRandomGame);
 }
+
+//event listeners for update.html
+function gameItemClicked(){
+  console.log('Item was clicked! <3');
+}
+var containerGameItem = document.getElementsByClassName('game-item');
+for(var i = 0; i < containerGameItem.length; i++){
+  containerGameItem[i].addEventListener('click', gameItemClicked);
+}
