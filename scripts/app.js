@@ -55,7 +55,7 @@ function checkLocalStorage(arrayToBeStored, keyName) {
   if (window.localStorage.length !== 0) {
     var storedUserGame = localStorage.getItem(keyName);
     var parsedUserGame = JSON.parse(storedUserGame);
-    console.log(parsedUserGame);
+    (parsedUserGame);
     arrayToBeStored = parsedUserGame;
   }
 }
@@ -112,8 +112,8 @@ function renderRandomGame() {
     containerGenerateRandomGame.textContent = '';
     containerGenerateRandomGame.appendChild(randomResult);
   }
-  console.log(randomResult);
-  console.log(randomGameArray);
+  (randomResult);
+  (randomGameArray);
 }
 
 // This function checks if the games are in the user or public library and renders them in the correct location on update.html
@@ -133,29 +133,32 @@ function userGameTrueCheck() {
 }
 
 function renderSearchResults(array) {
+  containerGameSearchResults.textContent = '';
   for (var i = 0; i < array.length; i++) {
     var renderedGame = renderGameItem(array[i]);
     containerGameSearchResults.appendChild(renderedGame);
+    ('one game was rendered');
+
   }
 }
 //event listeners for update.html
 function toggleUserGameValue(toggleTarget) {
-  console.log(toggleTarget);
+  (toggleTarget);
   if (toggleTarget.userGame === true) {
     toggleTarget.userGame = false;
-    console.log('if true was fired');
+    ('if true was fired');
     console.table(listOfGames[i]);
   } else {
     toggleTarget.userGame = true;
-    console.log('if false was fired');
+    ('if false was fired');
     console.table(listOfGames[i]);
   }
 }
 
 function moveGameItem() {
   var clickedId = this.id;
-  console.log(clickedId);
-  console.log('Item was clicked! <3');
+  (clickedId);
+  ('Item was clicked! <3');
   for (var i = 0; i < listOfGames.length; i++) {
     if (clickedId === listOfGames[i].gameID) {
       toggleUserGameValue(listOfGames[i]);
@@ -163,6 +166,7 @@ function moveGameItem() {
   }
   updateLocalStorage(listOfGames, 'stored list of games');
 }
+// **This function will create an array which will be of games that are to be played if user is drunk**/
 
 function buildArrayOfDrunkGames() {
   var drunkArray = [];
@@ -174,6 +178,7 @@ function buildArrayOfDrunkGames() {
   }
   return drunkArray;
 }
+// **This function is checking for user game matches based on game library data and user form entries.**
 
 function checkForMatches(array, input1, input2, input3) {
   var searchResults = [];
@@ -181,32 +186,33 @@ function checkForMatches(array, input1, input2, input3) {
     var gameItem = array[i];
     if (gameItem.minPlayers <= input1 && gameItem.maxPlayers >=
       input1) {
-      console.log('gate 1');
+      ('gate 1');
       if (gameItem.minAge <= input2) {
-        console.log('gate 2');
+        ('gate 2');
         if (gameItem.time === input3) {
-          console.log('gate 3');
+          ('gate 3');
           searchResults.push(gameItem);
-          console.log(searchResults);
+          (searchResults);
         }
       }
     }
   }
-  console.log(searchResults);
+  (searchResults);
   return searchResults;
 }
+// **This is the event handler for the submission of the form by user**
 
 function searchFormDataHandler(event) {
   event.preventDefault();
-  console.log('form submitted!');
+  ('form submitted!');
   var inputPlayers = parseInt(event.target.players.value);
-  console.log(inputPlayers);
+  (inputPlayers);
   var inputAge = parseInt(event.target.age.value);
-  console.log(inputAge);
+  (inputAge);
   var inputTime = parseInt(event.target.time.value);
-  console.log(inputTime);
+  (inputTime);
   var inputIntoxicated = event.target.intoxicated.value;
-  console.log(inputIntoxicated);
+  (inputIntoxicated);
 
   var drunkGames = buildArrayOfDrunkGames();
 
@@ -214,12 +220,13 @@ function searchFormDataHandler(event) {
     var drunkMatches = checkForMatches(drunkGames, inputPlayers, inputAge,
       inputTime);
     renderSearchResults(drunkMatches);
-    console.log(drunkMatches);
+    ('drunk matches = ' + drunkMatches);
   } else {
     var soberMatches = checkForMatches(listOfGames, inputPlayers, inputAge,
       inputTime);
+    ('sober matches=' + soberMatches);
     renderSearchResults(soberMatches);
-    console.log(soberMatches);
+    ('sober matches=' + soberMatches);
   }
 }
 //This should be called only when local storage blank
