@@ -128,10 +128,31 @@ if(randomGameButton){
 }
 
 //event listeners for update.html
-function gameItemClicked(){
-  console.log('Item was clicked! <3');
+function toggleUserGameVale(toggleTarget){
+  console.log(toggleTarget);
+  if(toggleTarget.userGame === true){
+    toggleTarget.userGame = false;
+    console.log('if true was fired');
+    console.table(listOfGames[i]);
+  } else {
+    toggleTarget.userGame = true;
+    console.log('if false was fired');
+    console.table(listOfGames[i]);
+  }
 }
+
+function moveGameItem(){
+  var clickedId = this.id;
+  console.log(clickedId);
+  console.log('Item was clicked! <3');
+  for(var i = 0; i < listOfGames.length; i++){
+    if(clickedId === listOfGames[i].gameID){
+      toggleUserGameVale(listOfGames[i]);
+    }
+  }
+}
+
 var containerGameItem = document.getElementsByClassName('game-item');
 for(var i = 0; i < containerGameItem.length; i++){
-  containerGameItem[i].addEventListener('click', gameItemClicked);
+  containerGameItem[i].addEventListener('click', moveGameItem);
 }
