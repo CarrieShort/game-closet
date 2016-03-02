@@ -130,13 +130,13 @@ if(randomGameButton){
 //event listeners for update.html
 function moveGameItem(){
   console.log('Item was clicked! <3');
-  for(var i = 0; i < dataForPreSelectedGames.length; i++){
-    if(dataForPreSelectedGames[i].userGame === true){
-      dataForPreSelectedGames[i].userGame = false;
-      console.log(dataForPreSelectedGames.userGame + 'was set to false');
+  for(var i = 0; i < listOfGames.length; i++){
+    if(listOfGames[i].userGame === true){
+      listOfGames[i].userGame = false;
+      console.log(listOfGames[i].userGame + 'was set to false');
     } else {
-      dataForPreSelectedGames[i].userGame = true;
-      console.log(dataForPreSelectedGames.userGame + 'was set to true');
+      listOfGames[i].userGame = true;
+      console.log(listOfGames[i].userGame + 'was set to true');
     }
   }
 }
