@@ -1,5 +1,6 @@
 /*google font for headers and logo*/
 @import url(https://fonts.googleapis.com/css?family=Rye);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 
 /* Reset CSS taken from meyer web */
@@ -55,6 +56,7 @@ table {
 /* Global Styles */
 body {
 	background-color: #f8f4e7;
+	font-family: 'Open Sans', sans-serif;
 }
 
 h1 {
