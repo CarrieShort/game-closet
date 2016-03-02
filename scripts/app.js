@@ -176,9 +176,9 @@ function buildArrayOfDrunkGames() {
 }
 
 function checkForMatches(array, input1, input2, input3) {
+  var searchResults = [];
   for (var i = 0; i < array.length; i++) {
     var gameItem = array[i];
-    var searchResults = [];
     if (gameItem.minPlayers <= input1 && gameItem.maxPlayers >=
       input1) {
       console.log('gate 1');
@@ -187,10 +187,13 @@ function checkForMatches(array, input1, input2, input3) {
         if (gameItem.time === input3) {
           console.log('gate 3');
           searchResults.push(gameItem);
+          console.log(searchResults);
         }
       }
     }
   }
+  console.log(searchResults);
+  return searchResults;
 }
 
 function searchFormDataHandler(event) {
@@ -208,12 +211,16 @@ function searchFormDataHandler(event) {
   var drunkGames = buildArrayOfDrunkGames();
 
   if (inputIntoxicated === 'true') {
-    checkForMatches(drunkGames, inputPlayers, inputAge, inputTime);
+    var drunkMatches = checkForMatches(drunkGames, inputPlayers, inputAge,
+      inputTime);
+    renderSearchResults(drunkMatches);
+    console.log(drunkMatches);
   } else {
-    checkForMatches(listOfGames, inputPlayers, inputAge, inputTime);
-
+    var soberMatches = checkForMatches(listOfGames, inputPlayers, inputAge,
+      inputTime);
+    renderSearchResults(soberMatches);
+    console.log(soberMatches);
   }
-
 }
 //This should be called only when local storage blank
 buildInitialListOfGames();
