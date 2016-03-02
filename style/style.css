@@ -283,17 +283,18 @@ nav ul li a {
 	justify-content: center;
 }
 .content-area.home-content-area article {
+	position: relative;
 	background-color: white;
 	flex-direction: column;
 	border: 5px solid #084a5c;
-	align-items: stretch;
+	padding-bottom: 100px;
 	width: 35%;
 	min-height: 35%;
 	margin: 2%;
 }
 
 .content-area.home-content-area img {
-	margin-left: 4%;
+	margin-left: 3%;
 	margin-top: 5%;
 	width: 95%;
 	height: 75%;
@@ -305,8 +306,9 @@ nav ul li a {
 }
 .content-area.home-content-area article .button {
 	margin-left: 5%;
-	align-content: flex-end;
+	position: absolute;
 	width: 80%;
+	bottom: 0;
 }
 /* update.html - Edit Game Closet Specific Styles */
 
