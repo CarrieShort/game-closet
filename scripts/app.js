@@ -173,7 +173,7 @@ function buildArrayOfDrunkGames() {
   for (var i = 0; i < listOfGames.length; i++) {
     var gameItem = listOfGames[i];
     if (gameItem.intoxicated === 'true') {
-      drunkArray.push(listOfGames[i])
+      drunkArray.push(listOfGames[i]);
     }
   }
   return drunkArray;
@@ -220,12 +220,14 @@ function searchFormDataHandler(event) {
     var drunkMatches = checkForMatches(drunkGames, inputPlayers, inputAge,
       inputTime);
     renderSearchResults(drunkMatches);
+    updateLocalStorage(drunkMatches, 'stored list of search results');
     ('drunk matches = ' + drunkMatches);
   } else {
     var soberMatches = checkForMatches(listOfGames, inputPlayers, inputAge,
       inputTime);
     ('sober matches=' + soberMatches);
     renderSearchResults(soberMatches);
+    updateLocalStorage(soberMatches, 'stored list of search results');
     ('sober matches=' + soberMatches);
   }
 }
