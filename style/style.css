@@ -131,7 +131,8 @@ nav ul li a {
 	justify-content: space-between;
 	max-width: 1200px;
 	margin: 0 auto;
-	padding-top:20px;
+	padding:20px;
+	width: auto;
 }
 .home-header h1 {
 	width: 219px;
