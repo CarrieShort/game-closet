@@ -1,23 +1,28 @@
 'use strict';
 var listOfGames = [];
 
-var containerGenerateRandomGame = document.getElementById('js-generate-random-game');
+var containerGenerateRandomGame = document.getElementById(
+  'js-generate-random-game');
 
 // Container variable for random game generator on the home page
-var containerGenerateRandomGame = document.getElementById('js-generate-random-game');
+var containerGenerateRandomGame = document.getElementById(
+  'js-generate-random-game');
 
 // Variables for JavaScript elements on search.html
-var containerGameSearchResults = document.getElementById('js-game-search-results');
-var containterPickGameForm = document.getElementById('js-pick-game-form');
+var containerGameSearchResults = document.getElementById(
+  'js-game-search-results');
+var formGameSearchInputs = document.getElementById('js-pick-game-form');
 var buttonGameSearchSubmit = document.getElementById('js-game-search-submit');
 
 // Variables for JavaScript elements on update.html
 var containerUserGames = document.getElementById('js-user-games-container');
-var containerBuiltInGameLibrary = document.getElementById('js-built-in-game-library');
+var containerBuiltInGameLibrary = document.getElementById(
+  'js-built-in-game-library');
 
 
 // This is the constructor function that builds our board games.
-function BuildGameItem(gameName, minPlayers, maxPlayers, minAge, intoxicated, time, rating, gameDescription, gameID, userGame){
+function BuildGameItem(gameName, minPlayers, maxPlayers, minAge, intoxicated,
+  time, rating, gameDescription, gameID, userGame) {
   this.gameName = gameName;
   this.minPlayers = minPlayers;
   this.maxPlayers = maxPlayers;
@@ -35,24 +40,29 @@ function BuildGameItem(gameName, minPlayers, maxPlayers, minAge, intoxicated, ti
 // Function to replace instantiatians of buildListOfGames
 
 function buildInitialListOfGames() {
-  for(var i=0; i < dataForPreSelectedGames.length; i++) {
-    new BuildGameItem(dataForPreSelectedGames[i][0], dataForPreSelectedGames[i][1],dataForPreSelectedGames[i][2], dataForPreSelectedGames[i][3],dataForPreSelectedGames[i][4],dataForPreSelectedGames[i][5],dataForPreSelectedGames[i][6],dataForPreSelectedGames[i][7], 'gameId' + [i],false);
+  for (var i = 0; i < dataForPreSelectedGames.length; i++) {
+    new BuildGameItem(dataForPreSelectedGames[i][0], dataForPreSelectedGames[i]
+      [1], dataForPreSelectedGames[i][2], dataForPreSelectedGames[i][3],
+      dataForPreSelectedGames[i][4], dataForPreSelectedGames[i][5],
+      dataForPreSelectedGames[i][6], dataForPreSelectedGames[i][7], 'gameId' + [
+        i
+      ], false);
   }
 }
 
 //**check local storage **
-function checkLocalStorage (arrayToBeStored, keyName){
-  if (window.localStorage.length !==0){
+function checkLocalStorage(arrayToBeStored, keyName) {
+  if (window.localStorage.length !== 0) {
     var storedUserGame = localStorage.getItem(keyName);
-    var parsedUserGame= JSON.parse(storedUserGame);
+    var parsedUserGame = JSON.parse(storedUserGame);
     console.log(parsedUserGame);
-    arrayToBeStored= parsedUserGame;
+    arrayToBeStored = parsedUserGame;
   }
 }
 
 //**local storage function to store listofGames array**
-function updateLocalStorage(arrayToBeStored, keyName){
-  var storedUserGame= JSON.stringify(arrayToBeStored);
+function updateLocalStorage(arrayToBeStored, keyName) {
+  var storedUserGame = JSON.stringify(arrayToBeStored);
   localStorage.setItem(keyName, storedUserGame);
 }
 
@@ -79,22 +89,27 @@ function getRandomGameArrayElement(arr) {
 }
 
 // render game item html
-function renderGameItem (gameItemIndex){
+function renderGameItem(gameItemIndex) {
   var gameItemContainer = document.createElement('article');
-  var gameItemContent = '<h2>'+ gameItemIndex.gameName + '</h2><p class="features"><i class="fa fa-user"></i>' + gameItemIndex.minPlayers + '-' + gameItemIndex.maxPlayers +' <i class="fa fa-clock-o"></i>'+ gameItemIndex.time +' <i class="fa-arrow-circle-up"></i>'+ gameItemIndex.minAge +' years and up</p><p class="description">' + gameItemIndex.gameDescription + '</p>' ;
+  var gameItemContent = '<h2>' + gameItemIndex.gameName +
+    '</h2><p class="features"><i class="fa fa-user"></i>' + gameItemIndex.minPlayers +
+    '-' + gameItemIndex.maxPlayers + ' <i class="fa fa-clock-o"></i>' +
+    gameItemIndex.time + ' <i class="fa-arrow-circle-up"></i>' + gameItemIndex.minAge +
+    ' years and up</p><p class="description">' + gameItemIndex.gameDescription +
+    '</p>';
 
   gameItemContainer.id = gameItemIndex.gameID;
-  gameItemContainer.setAttribute('class','game-item');
+  gameItemContainer.setAttribute('class', 'game-item');
   gameItemContainer.innerHTML = gameItemContent;
   return gameItemContainer;
 }
 
 // Function that renders a random game from the listOfGames array
-function renderRandomGame(){
+function renderRandomGame() {
   var randomGameArray = getRandomGameArrayElement(listOfGames);
   var randomResult = renderGameItem(randomGameArray[0]);
-  if(containerGenerateRandomGame){
-    containerGenerateRandomGame.textContent= '';
+  if (containerGenerateRandomGame) {
+    containerGenerateRandomGame.textContent = '';
     containerGenerateRandomGame.appendChild(randomResult);
   }
   console.log(randomResult);
@@ -102,25 +117,31 @@ function renderRandomGame(){
 }
 
 // This function checks if the games are in the user or public library and renders them in the correct location on update.html
-function userGameTrueCheck(){
-  for(var i = 0; i < listOfGames.length; i++){
+function userGameTrueCheck() {
+  for (var i = 0; i < listOfGames.length; i++) {
     var renderedGame = renderGameItem(listOfGames[i]);
-    if(listOfGames[i].userGame === true){
-      if(containerUserGames){
+    if (listOfGames[i].userGame === true) {
+      if (containerUserGames) {
         containerUserGames.appendChild(renderedGame);
       }
     } else {
-      if(containerBuiltInGameLibrary){
+      if (containerBuiltInGameLibrary) {
         containerBuiltInGameLibrary.appendChild(renderedGame);
       }
     }
   }
 }
 
+function renderSearchResults(array) {
+  for (var i = 0; i < array.length; i++) {
+    var renderedGame = renderGameItem(array[i]);
+    containerGameSearchResults.appendChild(renderedGame);
+  }
+}
 //event listeners for update.html
-function toggleUserGameValue(toggleTarget){
+function toggleUserGameValue(toggleTarget) {
   console.log(toggleTarget);
-  if(toggleTarget.userGame === true){
+  if (toggleTarget.userGame === true) {
     toggleTarget.userGame = false;
     console.log('if true was fired');
     console.table(listOfGames[i]);
@@ -131,18 +152,69 @@ function toggleUserGameValue(toggleTarget){
   }
 }
 
-function moveGameItem(){
+function moveGameItem() {
   var clickedId = this.id;
   console.log(clickedId);
   console.log('Item was clicked! <3');
-  for(var i = 0; i < listOfGames.length; i++){
-    if(clickedId === listOfGames[i].gameID){
+  for (var i = 0; i < listOfGames.length; i++) {
+    if (clickedId === listOfGames[i].gameID) {
       toggleUserGameValue(listOfGames[i]);
     }
   }
   updateLocalStorage(listOfGames, 'stored list of games');
 }
 
+function buildArrayOfDrunkGames() {
+  var drunkArray = [];
+  for (var i = 0; i < listOfGames.length; i++) {
+    var gameItem = listOfGames[i];
+    if (gameItem.intoxicated === 'true') {
+      drunkArray.push(listOfGames[i])
+    }
+  }
+  return drunkArray;
+}
+
+function checkForMatches(array, input1, input2, input3) {
+  for (var i = 0; i < array.length; i++) {
+    var gameItem = array[i];
+    var searchResults = [];
+    if (gameItem.minPlayers <= input1 && gameItem.maxPlayers >=
+      input1) {
+      console.log('gate 1');
+      if (gameItem.minAge <= input2) {
+        console.log('gate 2');
+        if (gameItem.time === input3) {
+          console.log('gate 3');
+          searchResults.push(gameItem);
+        }
+      }
+    }
+  }
+}
+
+function searchFormDataHandler(event) {
+  event.preventDefault();
+  console.log('form submitted!');
+  var inputPlayers = parseInt(event.target.players.value);
+  console.log(inputPlayers);
+  var inputAge = parseInt(event.target.age.value);
+  console.log(inputAge);
+  var inputTime = parseInt(event.target.time.value);
+  console.log(inputTime);
+  var inputIntoxicated = event.target.intoxicated.value;
+  console.log(inputIntoxicated);
+
+  var drunkGames = buildArrayOfDrunkGames();
+
+  if (inputIntoxicated === 'true') {
+    checkForMatches(drunkGames, inputPlayers, inputAge, inputTime);
+  } else {
+    checkForMatches(listOfGames, inputPlayers, inputAge, inputTime);
+
+  }
+
+}
 //This should be called only when local storage blank
 buildInitialListOfGames();
 
@@ -155,13 +227,15 @@ updateLocalStorage(listOfGames, 'stored list of games');
 
 //event listener on home page for getRandomGameArrayElement
 
-var randomGameButton = document.getElementById('js-generate-random-game-button');
-if(randomGameButton){
+var randomGameButton = document.getElementById(
+  'js-generate-random-game-button');
+if (randomGameButton) {
   randomGameButton.addEventListener('click', renderRandomGame);
 }
 
 
 var containerGameItem = document.getElementsByClassName('game-item');
-for(var i = 0; i < containerGameItem.length; i++){
+for (var i = 0; i < containerGameItem.length; i++) {
   containerGameItem[i].addEventListener('click', moveGameItem);
 }
+formGameSearchInputs.addEventListener('submit', searchFormDataHandler);
