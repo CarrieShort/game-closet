@@ -129,14 +129,18 @@ if(randomGameButton){
 
 //event listeners for update.html
 function moveGameItem(){
+  var clickedId = this.id;
+  console.log(clickedId);
   console.log('Item was clicked! <3');
   for(var i = 0; i < listOfGames.length; i++){
-    if(listOfGames[i].userGame === true){
-      listOfGames[i].userGame = false;
-      console.log(listOfGames[i].userGame + 'was set to false');
-    } else {
-      listOfGames[i].userGame = true;
-      console.log(listOfGames[i].userGame + 'was set to true');
+    if(clickedId === listOfGames[i].gameID){
+      if(listOfGames[i].userGame === true){
+        listOfGames[i].userGame = false;
+        console.table(listOfGames[i]);
+      } else {
+        listOfGames[i].userGame = true;
+        console.table(listOfGames[i]);
+      }
     }
   }
 }
