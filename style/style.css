@@ -122,6 +122,151 @@ nav ul li a {
 
 /* index.html - Home Page Specific Styles */
 
+/* Header */
+.home-header {
+	height: auto;
+	margin-top: 0;
+	background: none;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding-top:20px;
+}
+.home-header h1 {
+	width: 219px;
+	height: 159px;
+	padding-top: 60px;
+	font-size: 40px;
+	position: relative;
+	transform: rotate(0deg);
+	margin: 0;
+}
+.home-header span.tilt {transform: rotate(-15deg);}
+.home-header h1 span.arrow-down {
+	display: block;
+	width: 30px;
+	height: 57px;
+	background:url(../img/arrow-down.png)no-repeat;
+	position: absolute;
+	bottom: 0px;
+	left:93px;
+}
+.random-result {
+	height: 209px;
+	border: 5px solid #084a5c;
+	width: 40%;
+	background: #1aa4ba;
+	position: relative;
+	z-index: 20;
+	color: #ffffff;
+	text-align: center;
+}
+.left-arrow {
+	background: url(../img/left-arrow.png) no-repeat;
+	display: block;
+	position: absolute;
+	width: 54px;
+	height: 30px;
+	top: 50%;
+	right: 0;
+	margin-top: -15px;
+}
+.dice-button {
+	width: 150px;
+	height: 150px;
+	border-radius: 150px;
+	border: 5px solid #084a5c;
+	background: #d8ebee;
+	text-align: center;
+	line-height: 150px;
+	cursor: pointer;
+	margin-right: 35px;
+	margin-top:28px;
+	position: relative;
+}
+.dice-button img {
+	margin-top: 30px;
+}
+.dice-button:before{
+	content: "";
+	border-top: 5px solid #084a5c;
+	width: 300px;
+	position: absolute;
+	left:-300px;
+	top: 50%;
+	height: 50%;
+	z-index: 10;
+}
+.game-trail {
+	width: 100%;
+	background: url(../img/game-trail-bg.png) repeat-x center;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	clear: both;
+	align-items: center;
+	margin-top:30px;
+}
+.game-trail p {
+	width: 20%;
+	background: #ffffff;
+	color: #5e5e5e;
+	text-align: center;
+	line-height: 22px;
+}
+
+.game-trail p:nth-child(2n+0) {
+    background: #ffffff;
+		width: 50px;
+		height: 50px;
+		border: 5px solid #084a5c;
+		border-radius: 50px;
+}
+.game-trail p:nth-child(2n+1) {
+	border: 5px solid #084a5c;
+	height: 85px;
+	padding: 10px
+}
+.game-trail p:first-child{
+	background:#d8ebee;
+	color:#084a5c;
+	text-align: center;
+	font-family:'Rye', cursive;
+	font-size: 40px;
+	line-height: 85px;
+	width: 189px;
+	position: relative;
+}
+
+.game-trail p:last-child {
+	background:#e4e4b5;
+	color:#084a5c;
+	text-align: center;
+	font-family:'Rye', cursive;
+	font-size: 40px;
+	line-height: 40px;
+	width: 189px;
+	position: relative;
+}
+.game-trail p:last-child span {
+	font-size: 20px;
+	display: block;
+}
+.game-trail p:last-child:before, .game-trail p:first-child:before {
+	content: "";
+	border-right: 5px solid #084a5c;
+	height: 40px;
+	position: absolute;
+	top:-40px;
+	right: 50%;
+	width: 50%;
+}
+.game-trail p:last-child:before {
+	height: 67px;
+	top:-67px;
+}
+
 /* update.html - Edit Game Closet Specific Styles */
 
 /* search.html Search Game Closet Specific Styles */
