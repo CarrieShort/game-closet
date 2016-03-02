@@ -230,6 +230,7 @@ function searchFormDataHandler(event) {
     ('sober matches=' + soberMatches);
   }
   var formValueArray = [inputPlayers, inputAge, inputTime, inputIntoxicated];
+  updateLocalStorage(formValueArray, 'This is the search form data');
 }
 
 //This should be called only when local storage blank
