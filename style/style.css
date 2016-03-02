@@ -53,6 +53,9 @@ table {
 }
 
 /* Global Styles */
+body {
+	background-color: #f8f4e7;
+}
 
 h1 {
 	background-image: url("../img/logo-bg.png");
@@ -74,8 +77,13 @@ h1 {
 	position: absolute;
 	left: 0;
 }
-
-
+h2 {
+	font-family:'Rye', cursive;
+	color: #084a5c;
+	text-align: center;
+	margin: 2%;
+	font-size: 1.747em;
+}
 .button {
 	display: inline-block;
 	background: #1aa4ba;
@@ -267,7 +275,21 @@ nav ul li a {
 	height: 67px;
 	top:-67px;
 }
+.content-area.home-content-area{
+	display:flex;
+	flex-direction: row;
+}
+.content-area.home-content-area article {
+	background-color: white;
+	flex-direction: column;
+	align-self: center;
+	justify-content: center;
+	border: 5px solid #084a5c;
+	width: 20%;
+}
 
+.content-area.home-content-area img {
+}
 /* update.html - Edit Game Closet Specific Styles */
 
 /* search.html Search Game Closet Specific Styles */
@@ -350,4 +372,41 @@ select {
 }
 /* search.html About Players Specific Styles */
 
+/* about.html About Players Specific Styles */
+.content-area.about-content article{
+	display: flex;
+	background-color: white;
+	flex-direction: column;
+	align-self: center;
+	justify-content: center;
+	border: 5px solid #084a5c;
+	margin-top: 10%;
+	margin-left: 20%;
+	width: 55%;
+
+}
+/*.content-area.about-content h2 {
+	font-family:'Rye', cursive;
+	color: #084a5c;
+	text-align: center;
+	margin: 2%;
+	font-size: 1.747em;
+
+}*/
+.content-area.about-content img{
+	display:flex;
+	align-content: center;
+	margin-left: 4%;
+	margin-top: 5%;
+	height: 50%;
+	width: 90%;
+	border: 5px solid #084a5c;
+}
+.content-area.about-content p {
+	text-align: center;
+	color: #979797;
+	margin: 1%;
+}
+
 /* Media Queries for Responsive */
+form {margin-top: 100px;}
