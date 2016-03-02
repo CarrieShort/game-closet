@@ -41,19 +41,21 @@ function buildInitialListOfGames() {
 }
 
 //**check local storage **
-function checkLocalStorage (){
+function checkLocalStorage (arrayToBeStored, keyName){
   if (window.localStorage.length !==0){
-    var storedUserGame = localStorage.getItem('stored list of games');
+    var storedUserGame = localStorage.getItem(keyName);
     var parsedUserGame= JSON.parse(storedUserGame);
-    listOfGames= parsedUserGame;
+    arrayToBeStored= parsedUserGame;
   }
 }
 
 //**local storage function to store listofGames array**
-function updateLocalStorage(){
-  var storedUserGame= JSON.stringify(listOfGames);
-  localStorage.setItem('stored list of games', storedUserGame);
+function updateLocalStorage(arrayToBeStored, keyName){
+  var storedUserGame= JSON.stringify(arrayToBeStored);
+  localStorage.setItem(keyName, storedUserGame);
 }
+
+
 
 // **this function below is going to take our game array and shuffle it as well as use math.random to ensure that there are no duplicate items. This is especially helpful if we choose to return more than one iter. However; this may not be useful at all for single item returns.**
 
@@ -119,6 +121,10 @@ buildInitialListOfGames();
 
 // Call Render Functions
 userGameTrueCheck();
+
+//Call local storage
+checkLocalStorage(listOfGames, 'stored list of games');
+updateLocalStorage(listOfGames, 'stored list of games');
 
 //event listener on home page for getRandomGameArrayElement
 
