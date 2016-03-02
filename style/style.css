@@ -129,6 +129,10 @@ nav ul li a {
 	text-decoration: none;
 }
 
+.content-area {
+	margin-top: 100px;
+}
+
 /* index.html - Home Page Specific Styles */
 
 /* Header */
@@ -281,6 +285,7 @@ nav ul li a {
 	display:flex;
 	flex-direction: row;
 	justify-content: center;
+	margin-top: 0;
 }
 .content-area.home-content-area article {
 	position: relative;
@@ -422,4 +427,3 @@ select {
 }
 
 /* Media Queries for Responsive */
-form {margin-top: 100px;}
