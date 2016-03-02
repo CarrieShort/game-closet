@@ -34,9 +34,17 @@
         <option value="180">3 hours</option>
       </select>
       <label for= "intoxicated"> Are you intoxicated? Or do you plan to be?</label>
-      <input type="radio" name="intoxicated" value="true"> Yes<br>
-      <input type="radio" name="intoxicated" value="false"> No<br>
-      <button type="submit" id="js-game-search-submit">Submit</button>
+      <div class="intoxicated-content">
+          <div class="intoxicated-content-div">
+          <label for="yes">Yes</label>
+          <input type="radio" name="intoxicated" value="yes">
+        </div>
+        <div class="intoxicated-content-div">
+          <label for="no">No</label>
+          <input type="radio" name="intoxicated" value="no">
+        </div>
+      </div> <br>
+      <button type="submit" class="pick-game-button">Update Game Closet</button>
     </fieldset>
     </form>
     <section id="js-game-search-results">
