@@ -116,6 +116,7 @@ margin-top: 40px;
 
 nav {
 	padding: 10px 20px 10px 20px;
+	background-color: #c1c259;
 }
 
 nav ul li {
@@ -276,7 +277,6 @@ nav ul li a {
 	top:-67px;
 }
 
-
 .content-area.home-content-area {
 	display:flex;
 	flex-direction: row;
@@ -304,8 +304,9 @@ nav ul li a {
 	margin: 1%;
 }
 .content-area.home-content-area article .button {
-	margin-left: 20%;
+	margin-left: 5%;
 	align-content: flex-end;
+	width: 80%;
 }
 /* update.html - Edit Game Closet Specific Styles */
 
