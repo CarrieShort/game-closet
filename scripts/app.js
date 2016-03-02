@@ -220,14 +220,14 @@ function searchFormDataHandler(event) {
     var drunkMatches = checkForMatches(drunkGames, inputPlayers, inputAge,
       inputTime);
     renderSearchResults(drunkMatches);
-    updateLocalStorage(drunkMatches, 'stored list of drunk matches');
+    updateLocalStorage(drunkMatches, 'stored list of search results');
     ('drunk matches = ' + drunkMatches);
   } else {
     var soberMatches = checkForMatches(listOfGames, inputPlayers, inputAge,
       inputTime);
     ('sober matches=' + soberMatches);
     renderSearchResults(soberMatches);
-    updateLocalStorage(soberMatches, 'stored list of soberMatches');
+    updateLocalStorage(soberMatches, 'stored list of search results');
     ('sober matches=' + soberMatches);
   }
 }
