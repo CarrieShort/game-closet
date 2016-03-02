@@ -128,10 +128,19 @@ if(randomGameButton){
 }
 
 //event listeners for update.html
-function gameItemClicked(){
+function moveGameItem(){
   console.log('Item was clicked! <3');
+  for(var i = 0; i < dataForPreSelectedGames.length; i++){
+    if(dataForPreSelectedGames[i].userGame === true){
+      dataForPreSelectedGames[i].userGame = false;
+      console.log(dataForPreSelectedGames.userGame + 'was set to false');
+    } else {
+      dataForPreSelectedGames[i].userGame = true;
+      console.log(dataForPreSelectedGames.userGame + 'was set to true');
+    }
+  }
 }
 var containerGameItem = document.getElementsByClassName('game-item');
 for(var i = 0; i < containerGameItem.length; i++){
-  containerGameItem[i].addEventListener('click', gameItemClicked);
+  containerGameItem[i].addEventListener('click', moveGameItem);
 }
