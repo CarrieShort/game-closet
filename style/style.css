@@ -272,6 +272,33 @@ nav ul li a {
 
 /* search.html Search Game Closet Specific Styles */
 
+.pick-game-form {
+display: inline-block;
+width: 20%;
+border: 5px solid;
+border-color: #084a5c;
+}
+
+label {
+	display: block;
+	width: 200px;
+  clear: left;
+  padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+input {
+	background-color: #FBF4E7;
+	width: 180px;
+}
+
+.intoxicated-yes {
+	width: 10px;
+}
+
+.intoxicated-no {
+	width: 10px;
+}
 /* search.html About Players Specific Styles */
 
 /* Media Queries for Responsive */
