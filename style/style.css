@@ -53,6 +53,9 @@ table {
 }
 
 /* Global Styles */
+body {
+	background-color: #f8f4e7;
+}
 
 h1 {
 	background-image: url("../img/logo-bg.png");
@@ -74,7 +77,6 @@ h1 {
 	position: absolute;
 	left: 0;
 }
-
 
 .button {
 	display: inline-block;
@@ -268,10 +270,45 @@ nav ul li a {
 	top:-67px;
 }
 
+
 /* update.html - Edit Game Closet Specific Styles */
 
 /* search.html Search Game Closet Specific Styles */
 
 /* search.html About Players Specific Styles */
+.content-area.about-content article{
+	display: flex;
+	background-color: white;
+	flex-direction: column;
+	align-self: center;
+	justify-content: center;
+	border: 5px solid #084a5c;
+	margin-top: 10%;
+	margin-left: 20%;
+	width: 55%;
+
+}
+.content-area.about-content h2 {
+	font-family:'Rye', cursive;
+	color: #084a5c;
+	text-align: center;
+	margin: 2%;
+	font-size: 1.747em;
+
+}
+.content-area.about-content img{
+	display:flex;
+	align-content: center;
+	margin-left: 4%;
+	margin-top: 5%;
+	height: 50%;
+	width: 90%;
+	border: 5px solid #084a5c;
+}
+.content-area.about-content p {
+	text-align: center;
+	color: #979797;
+	margin: 1%;
+}
 
 /* Media Queries for Responsive */
