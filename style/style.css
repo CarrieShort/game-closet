@@ -271,33 +271,39 @@ nav ul li a {
 /* update.html - Edit Game Closet Specific Styles */
 
 /* search.html Search Game Closet Specific Styles */
+.content-area-search-content-area {
+	padding-top: 60px;
+}
 
 .pick-game-form {
 display: inline-block;
 width: 20%;
 border: 5px solid;
 border-color: #084a5c;
+padding: 20px;
 }
 
 label {
 	display: block;
-	width: 200px;
   clear: left;
   padding-bottom: 10px;
 	padding-top: 10px;
+	margin-top: 30px;
 }
 
 input {
+	display: block;
 	background-color: #FBF4E7;
-	width: 180px;
+	width: 80%;
 }
 
-.intoxicated-yes {
-	width: 10px;
+select {
+	background-color: #FBF4E7;
+	width: 80%;
 }
 
-.intoxicated-no {
-	width: 10px;
+.intoxicated-content {
+	
 }
 /* search.html About Players Specific Styles */
 
