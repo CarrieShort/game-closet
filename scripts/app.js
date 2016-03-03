@@ -11,13 +11,17 @@ var containerGenerateRandomGame = document.getElementById(
   'js-generate-random-game');
 
 // Variables for JavaScript elements on search.html
-var containerGameSearchResults = document.getElementById('js-game-search-results');
+var containerGameSearchResults = document.getElementById(
+  'js-game-search-results');
 var formGameSearchInputs = document.getElementById('js-pick-game-form');
 var buttonGameSearchSubmit = document.getElementById('js-game-search-submit');
 
+
+
 // Variables for JavaScript elements on update.html
 var containerUserGames = document.getElementById('js-user-games-container');
-var containerBuiltInGameLibrary = document.getElementById('js-built-in-game-library');
+var containerBuiltInGameLibrary = document.getElementById(
+  'js-built-in-game-library');
 
 // Variables for event listeners
 var randomGameButton = document.getElementById('js-generate-random-game-button');
@@ -110,7 +114,6 @@ function renderGameItem(gameItemIndex) {
     gameItemIndex.time + ' <i class="fa fa-arrow-circle-up"></i>' +
     gameItemIndex.minAge + ' years and up</p><p class="description">' +
     gameItemIndex.gameDescription + '</p>';
-
   gameItemContainer.id = gameItemIndex.gameID;
   gameItemContainer.setAttribute('class', 'game-item');
   gameItemContainer.innerHTML = gameItemContent;
@@ -155,8 +158,8 @@ function userGameTrueCheck() {
 }
 
 function renderSearchResults(array) {
-  containerGameSearchResults.textContent = '';
   for (var i = 0; i < array.length; i++) {
+    containerGameSearchResults.textContent = '';
     var renderedGame = renderGameItem(array[i]);
     containerGameSearchResults.appendChild(renderedGame);
 
@@ -212,6 +215,15 @@ function checkForMatches(array, input1, input2, input3) {
       }
     }
   }
+  console.log(searchResults[0]);
+  if (searchResults[0] != null) {
+    console.log('there were search results');
+  } else {
+    console.log('there were none');
+    containerGameSearchResults.textContent = '';
+    containerGameSearchResults.innerHTML = '<p>I made a thing</p>';
+  }
+  console.log(searchResults);
   return searchResults;
 }
 // **This is the event handler for the submission of the form by user**
