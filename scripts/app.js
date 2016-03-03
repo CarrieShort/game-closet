@@ -249,7 +249,7 @@ if (localStorageOnPageLoad != 'none') {
 
 // Call Render Functions
 userGameTrueCheck();
-buildListOfUserGames(listOfGames);
+buildListOfUserGames();
 //event listeners
 // event listener home page
 if (randomGameButton) {
