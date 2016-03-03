@@ -19,6 +19,9 @@ var containerUserGames = document.getElementById('js-user-games-container');
 var containerBuiltInGameLibrary = document.getElementById(
   'js-built-in-game-library');
 
+// Variables for event listeners
+var randomGameButton = document.getElementById( 'js-generate-random-game-button');
+var containerGameItem = document.getElementsByClassName('game-item');
 
 // This is the constructor function that builds our board games.
 function BuildGameItem(gameName, minPlayers, maxPlayers, minAge, intoxicated,
@@ -55,7 +58,6 @@ function checkLocalStorage(arrayToBeStored, keyName) {
   if (window.localStorage.length !== 0) {
     var storedUserGame = localStorage.getItem(keyName);
     var parsedUserGame = JSON.parse(storedUserGame);
-    (parsedUserGame);
     arrayToBeStored = parsedUserGame;
   }
 }
@@ -91,8 +93,8 @@ function getRandomGameArrayElement(arr) {
 // render game item html
 function renderGameItem(gameItemIndex) {
   var gameItemContainer = document.createElement('article');
-  var gameItemContent = '<h3>' + gameItemIndex.gameName +
-    '</h3><p class="features"><i class="fa fa-user"></i>' + gameItemIndex.minPlayers +
+  var gameItemContent = '<h2>' + gameItemIndex.gameName +
+    '</h2><p class="features"><i class="fa fa-user"></i>' + gameItemIndex.minPlayers +
     '-' + gameItemIndex.maxPlayers + ' <i class="fa fa-clock-o"></i>' +
     gameItemIndex.time + ' <i class="fa-arrow-circle-up"></i>' + gameItemIndex.minAge +
     ' years and up</p><p class="description">' + gameItemIndex.gameDescription +
@@ -112,8 +114,6 @@ function renderRandomGame() {
     containerGenerateRandomGame.textContent = '';
     containerGenerateRandomGame.appendChild(randomResult);
   }
-  (randomResult);
-  (randomGameArray);
 }
 
 // This function checks if the games are in the user or public library and renders them in the correct location on update.html
@@ -137,20 +137,16 @@ function renderSearchResults(array) {
   for (var i = 0; i < array.length; i++) {
     var renderedGame = renderGameItem(array[i]);
     containerGameSearchResults.appendChild(renderedGame);
-    ('one game was rendered');
 
   }
 }
 //event listeners for update.html
 function toggleUserGameValue(toggleTarget) {
-  (toggleTarget);
   if (toggleTarget.userGame === true) {
     toggleTarget.userGame = false;
-    ('if true was fired');
     console.table(listOfGames[i]);
   } else {
     toggleTarget.userGame = true;
-    ('if false was fired');
     console.table(listOfGames[i]);
   }
 }
@@ -158,7 +154,6 @@ function toggleUserGameValue(toggleTarget) {
 function moveGameItem() {
   var clickedId = this.id;
   (clickedId);
-  ('Item was clicked! <3');
   for (var i = 0; i < listOfGames.length; i++) {
     if (clickedId === listOfGames[i].gameID) {
       toggleUserGameValue(listOfGames[i]);
@@ -186,32 +181,22 @@ function checkForMatches(array, input1, input2, input3) {
     var gameItem = array[i];
     if (gameItem.minPlayers <= input1 && gameItem.maxPlayers >=
       input1) {
-      ('gate 1');
       if (gameItem.minAge <= input2) {
-        ('gate 2');
         if (gameItem.time === input3) {
-          ('gate 3');
           searchResults.push(gameItem);
-          (searchResults);
         }
       }
     }
   }
-  (searchResults);
   return searchResults;
 }
 // **This is the event handler for the submission of the form by user**
 function searchFormDataHandler(event) {
   event.preventDefault();
-  ('form submitted!');
   var inputPlayers = parseInt(event.target.players.value);
-  (inputPlayers);
   var inputAge = parseInt(event.target.age.value);
-  (inputAge);
   var inputTime = parseInt(event.target.time.value);
-  (inputTime);
   var inputIntoxicated = event.target.intoxicated.value;
-  (inputIntoxicated);
 
   var drunkGames = buildArrayOfDrunkGames();
 
@@ -220,14 +205,11 @@ function searchFormDataHandler(event) {
       inputTime);
     renderSearchResults(drunkMatches);
     updateLocalStorage(drunkMatches, 'stored list of search results');
-    ('drunk matches = ' + drunkMatches);
   } else {
     var soberMatches = checkForMatches(listOfGames, inputPlayers, inputAge,
       inputTime);
-    ('sober matches=' + soberMatches);
     renderSearchResults(soberMatches);
     updateLocalStorage(soberMatches, 'stored list of search results');
-    ('sober matches=' + soberMatches);
   }
   var formValueArray = [inputPlayers, inputAge, inputTime, inputIntoxicated];
   updateLocalStorage(formValueArray, 'This is the search form data');
@@ -244,15 +226,10 @@ checkLocalStorage(listOfGames, 'stored list of games');
 updateLocalStorage(listOfGames, 'stored list of games');
 
 //event listener on home page for getRandomGameArrayElement
-
-var randomGameButton = document.getElementById(
-  'js-generate-random-game-button');
 if (randomGameButton) {
   randomGameButton.addEventListener('click', renderRandomGame);
 }
 
-
-var containerGameItem = document.getElementsByClassName('game-item');
 for (var i = 0; i < containerGameItem.length; i++) {
   containerGameItem[i].addEventListener('click', moveGameItem);
 }
