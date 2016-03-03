@@ -149,10 +149,10 @@ function renderSearchResults(array) {
 function toggleUserGameValue(toggleTarget) {
   if (toggleTarget.userGame === true) {
     toggleTarget.userGame = false;
-    console.log(listOfGames[i]);
+    // console.log(listOfGames[i]);
   } else {
     toggleTarget.userGame = true;
-    console.log(listOfGames[i]);
+    // console.log(listOfGames[i]);
   }
 }
 
@@ -165,6 +165,8 @@ function moveGameItem() {
     }
   }
   updateLocalStorage(listOfGames, 'stored list of games');
+  userGameTrueCheck();
+  addListenerToLibrary();
 }
 // **This function will create an array which will be of games that are to be played if user is drunk**/
 
@@ -242,6 +244,9 @@ if (localStorageOnPageLoad != 'none') {
 // Call Render Functions
 userGameTrueCheck();
 
+//Call listener Function
+addListenerToLibrary();
+
 //event listeners
 // event listener home page
 if (randomGameButton) {
@@ -249,8 +254,12 @@ if (randomGameButton) {
 }
 
 // event listener on user game closet library page
-for (var i = 0; i < containerGameItem.length; i++) {
-  containerGameItem[i].addEventListener('click', moveGameItem);
+function addListenerToLibrary(){
+  for (var i = 0; i < containerGameItem.length; i++) {
+    console.log(containerGameItem[i]);
+    console.log('add event listener function fired!');
+    containerGameItem[i].addEventListener('click', moveGameItem);
+  }
 }
 
 if (buttonMobileMenu) {
