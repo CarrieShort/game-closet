@@ -328,13 +328,12 @@ nav ul li a {
 }
 /* update.html - Update Game Closet Specific Styles */
 .content-area-update-content-area {
-	display:flex;
-	flex-direction: row;
+	display:inline-flex;
+	flex-direction: column;
+	justify-content: flex-end;
 }
 
 .content-area-update-content-area article {
-	display: inline-flex;
-	flex-direction: column;
 	background-color: white;
 	border: 5px solid #084a5c;
 	width: 80%;
