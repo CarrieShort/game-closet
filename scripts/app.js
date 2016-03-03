@@ -210,7 +210,10 @@ function searchFormDataHandler(event) {
       inputTime);
     renderSearchResults(drunkMatches);
     updateLocalStorage(drunkMatches, 'stored list of search results');
-
+  } else {
+    var soberMatches = checkForMatches(listOfGames, inputPlayers, inputAge, inputTime);
+    renderSearchResults(soberMatches);
+    updateLocalStorage(soberMatches, 'stored list of search results');
   }
   var formValueArray = [inputPlayers, inputAge, inputTime, inputIntoxicated];
   updateLocalStorage(formValueArray, 'This is the search form data');
