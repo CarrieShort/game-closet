@@ -632,4 +632,12 @@ select {
 .home-nav ul li a, nav ul li a {
 	color: #084a5c;
 }
+
+/*mobile seach form*/
+.pick-game-form {
+display: block;
+min-width: 100%;
+}
+
+/*closing bracket for mobile*/
 }
