@@ -321,8 +321,6 @@ nav ul li a {
 .content-area-update-content-area {
 	display:flex;
 	flex-direction: row;
-	justify-content: center;
-	padding-top: 20px;
 }
 
 .content-area-update-content-area article {
@@ -333,19 +331,28 @@ nav ul li a {
 	width: 80%;
 	height: 40%;
 	margin: 2%;
-	padding: 40px;
 }
 .user-games h2{
 	text-align: left;
-	padding-top: 50px;
-	margin: 2%;
+	padding: 60px;
 }
-
+.game-item h3{
+	text-align: center;
+}
+.features{
+	color: #1aa4ba;
+	text-align: center;
+}
+.description{
+	color: #979797;
+	text-align: justify;
+}
 .library {
 }
 
 .library h2{
 	text-align: center;
+
 }
 /* search.html Search Game Closet Specific Styles */
 .content-area-search-content-area {
