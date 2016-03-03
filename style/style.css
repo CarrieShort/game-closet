@@ -332,34 +332,52 @@ nav ul li a {
 }
 /* update.html - Update Game Closet Specific Styles */
 .content-area-update-content-area {
-	display:flex;
-	flex-direction: row;
-	justify-content: center;
-	padding-top: 20px;
+	display: -webkit-inline-box;
 }
 
 .content-area-update-content-area article {
-	display: inline-flex;
-	flex-direction: column;
 	background-color: white;
 	border: 5px solid #084a5c;
-	width: 80%;
-	height: 40%;
-	margin: 2%;
-	padding: 40px;
+	margin: 5%;
+	height: 200px;
+	width: 650px;
 }
-.user-games h2{
-	text-align: left;
-	padding-top: 50px;
-	margin: 2%;
-}
+.user-games {
+	padding:50px;
+	margin-top: 10px;
+	font-size: 18px;
+	}
 
 .library {
+	margin-left: 200px;
+	padding-top: 30px;
+	font-size: x-large;
 }
 
-.library h2{
-	text-align: center;
+.library h2 {
+	text-align: -webkit-center;
+	margin-left: 40px;
+	padding: 10px;
 }
+
+
+.game-item h3{
+	text-align:center;
+	margin: 1%;
+	font-size: 28px;
+}
+.features{
+	color: #1aa4ba;
+	text-align:center;
+	font-size: 24px;
+}
+.description{
+	color: #979797;
+	text-align:center;
+	padding: 10px;
+	font-size: 18px;
+}
+
 /* search.html Search Game Closet Specific Styles */
 .content-area-search-content-area {
 	padding-top: 60px;

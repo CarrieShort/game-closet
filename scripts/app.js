@@ -20,7 +20,7 @@ var containerBuiltInGameLibrary = document.getElementById(
   'js-built-in-game-library');
 
 // Variables for event listeners
-var randomGameButton = document.getElementById( 'js-generate-random-game-button');
+var randomGameButton = document.getElementById('js-generate-random-game-button');
 var containerGameItem = document.getElementsByClassName('game-item');
 
 //Variable for mobile menu event listener
@@ -100,9 +100,9 @@ function renderGameItem(gameItemIndex) {
   var gameItemContent = '<h3>' + gameItemIndex.gameName +
     '</h3><p class="features"><i class="fa fa-user"></i>' + gameItemIndex.minPlayers +
     '-' + gameItemIndex.maxPlayers + ' <i class="fa fa-clock-o"></i>' +
-    gameItemIndex.time + ' <i class="fa fa-arrow-circle-up"></i>' + gameItemIndex.minAge +
-    ' years and up</p><p class="description">' + gameItemIndex.gameDescription +
-    '</p>';
+    gameItemIndex.time + ' <i class="fa fa-arrow-circle-up"></i>' +
+    gameItemIndex.minAge + ' years and up</p><p class="description">' +
+    gameItemIndex.gameDescription + '</p>';
 
   gameItemContainer.id = gameItemIndex.gameID;
   gameItemContainer.setAttribute('class', 'game-item');
@@ -210,19 +210,15 @@ function searchFormDataHandler(event) {
       inputTime);
     renderSearchResults(drunkMatches);
     updateLocalStorage(drunkMatches, 'stored list of search results');
-  } else {
-    var soberMatches = checkForMatches(listOfGames, inputPlayers, inputAge,
-      inputTime);
-    renderSearchResults(soberMatches);
-    updateLocalStorage(soberMatches, 'stored list of search results');
+
   }
   var formValueArray = [inputPlayers, inputAge, inputTime, inputIntoxicated];
   updateLocalStorage(formValueArray, 'This is the search form data');
 }
 
-function toggleMobileMenu(){
+function toggleMobileMenu() {
   console.log(this.className);
-  if (this.className === 'mobile-menu-open'){
+  if (this.className === 'mobile-menu-open') {
     this.className = 'mobile-menu-closed';
     containerMobileMenu.style.display = 'none';
   } else {
@@ -233,7 +229,7 @@ function toggleMobileMenu(){
 
 //Call local storage
 var localStorageOnPageLoad = checkLocalStorage('stored list of games');
-if(localStorageOnPageLoad !='none') {
+if (localStorageOnPageLoad != 'none') {
   listOfGames = localStorageOnPageLoad;
 } else {
   //This should be called only when local storage blank
@@ -259,6 +255,6 @@ if (buttonMobileMenu) {
 }
 
 // event listener for search form
-if(formGameSearchInputs){
+if (formGameSearchInputs) {
   formGameSearchInputs.addEventListener('submit', searchFormDataHandler);
 }
