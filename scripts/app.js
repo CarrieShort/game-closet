@@ -23,6 +23,9 @@ var containerBuiltInGameLibrary = document.getElementById(
 var randomGameButton = document.getElementById( 'js-generate-random-game-button');
 var containerGameItem = document.getElementsByClassName('game-item');
 
+//Variable for mobile menu event listener
+var buttonMobileMenu = document.getElementById('js-mobile-menu-button');
+var containerMobileMenu = document.getElementById('js-mobile-menu');
 // This is the constructor function that builds our board games.
 function BuildGameItem(gameName, minPlayers, maxPlayers, minAge, intoxicated,
   time, rating, gameDescription, gameID, userGame) {
@@ -217,6 +220,17 @@ function searchFormDataHandler(event) {
   updateLocalStorage(formValueArray, 'This is the search form data');
 }
 
+function toggleMobileMenu(){
+  console.log(this.className);
+  if (this.className === 'mobile-menu-open'){
+    this.className = 'mobile-menu-closed';
+    containerMobileMenu.style.display = 'none';
+  } else {
+    this.className = 'mobile-menu-open';
+    containerMobileMenu.style.display = 'block';
+  }
+}
+
 //Call local storage
 var localStorageOnPageLoad = checkLocalStorage('stored list of games');
 if(localStorageOnPageLoad !='none') {
@@ -225,7 +239,6 @@ if(localStorageOnPageLoad !='none') {
   //This should be called only when local storage blank
   buildInitialListOfGames();
 }
-
 
 // Call Render Functions
 userGameTrueCheck();
@@ -239,6 +252,10 @@ if (randomGameButton) {
 // event listener on user game closet library page
 for (var i = 0; i < containerGameItem.length; i++) {
   containerGameItem[i].addEventListener('click', moveGameItem);
+}
+
+if (buttonMobileMenu) {
+  buttonMobileMenu.addEventListener('click', toggleMobileMenu);
 }
 
 // event listener for search form
