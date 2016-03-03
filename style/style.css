@@ -137,7 +137,10 @@ nav ul li a {
 	color: #FFFFFF;
 	text-decoration: none;
 }
-
+footer {
+	text-align: center;
+	color: #979797;
+}
 .content-area {
 	margin-top: 100px;
 }
@@ -634,10 +637,15 @@ select {
 }
 
 /*mobile seach form*/
+
+/*update.html mobile*/
 .pick-game-form {
 display: block;
 min-width: 100%;
 }
-
+/*about.html mobile*/
+.content-area.about-content article {
+	min-width: 100%;
+}
 /*closing bracket for mobile*/
 }
