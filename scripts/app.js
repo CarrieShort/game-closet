@@ -121,6 +121,7 @@ function renderRandomGame() {
 function userGameTrueCheck() {
   for (var i = 0; i < listOfGames.length; i++) {
     var renderedGame = renderGameItem(listOfGames[i]);
+    console.log('this is list of games i .userGame', listOfGames[i].userGame);
     if (listOfGames[i].userGame === true) {
       if (containerUserGames) {
         containerUserGames.appendChild(renderedGame);
@@ -216,18 +217,18 @@ function searchFormDataHandler(event) {
   updateLocalStorage(formValueArray, 'This is the search form data');
 }
 
-//This should be called only when local storage blank
-buildInitialListOfGames();
-
-// Call Render Functions
-userGameTrueCheck();
-
 //Call local storage
 var localStorageOnPageLoad = checkLocalStorage('stored list of games');
 if(localStorageOnPageLoad !='none') {
   listOfGames = localStorageOnPageLoad;
+} else {
+  //This should be called only when local storage blank
+  buildInitialListOfGames();
 }
-updateLocalStorage(listOfGames, 'stored list of games');
+
+
+// Call Render Functions
+userGameTrueCheck();
 
 //event listeners
 // event listener home page
