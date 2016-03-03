@@ -349,7 +349,7 @@ nav ul li a {
 	background-color: white;
 	border: 5px solid #084a5c;
 	margin-bottom: 20px;
-	height: 200px;
+	min-height: 200px;
 	width: 500px;
 	box-sizing: border-box;
 	padding: 20px;
