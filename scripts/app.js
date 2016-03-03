@@ -98,7 +98,7 @@ function renderGameItem(gameItemIndex) {
     '-' + gameItemIndex.maxPlayers + ' <i class="fa fa-clock-o"></i>' +
     gameItemIndex.time + ' <i class="fa-arrow-circle-up"></i>' + gameItemIndex.minAge +
     ' years and up</p><p class="description">' + gameItemIndex.gameDescription +
-    '</p>';
+    '</p>' + '<img src= "img/apples.png">';
 
   gameItemContainer.id = gameItemIndex.gameID;
   gameItemContainer.setAttribute('class', 'game-item');
