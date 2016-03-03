@@ -96,7 +96,7 @@ function renderGameItem(gameItemIndex) {
   var gameItemContent = '<h3>' + gameItemIndex.gameName +
     '</h3><p class="features"><i class="fa fa-user"></i>' + gameItemIndex.minPlayers +
     '-' + gameItemIndex.maxPlayers + ' <i class="fa fa-clock-o"></i>' +
-    gameItemIndex.time + ' <i class="fa-arrow-circle-up"></i>' + gameItemIndex.minAge +
+    gameItemIndex.time + ' <i class="fa fa-arrow-circle-up"></i>' + gameItemIndex.minAge +
     ' years and up</p><p class="description">' + gameItemIndex.gameDescription +
     '</p>';
 
