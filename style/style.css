@@ -147,6 +147,15 @@ footer {
 .mobile-menu-open,.mobile-menu-closed {
 	display: none;
 }
+.content-area article {
+	background-color: white;
+	border: 5px solid #084a5c;
+	margin-bottom: 20px;
+	min-height: 200px;
+	width: 500px;
+	box-sizing: border-box;
+	padding: 20px;
+}
 /* index.html - Home Page Specific Styles */
 
 /* Header */
@@ -348,15 +357,6 @@ footer {
 	flex-direction: column;
 }
 
-.update-content-area article {
-	background-color: white;
-	border: 5px solid #084a5c;
-	margin-bottom: 20px;
-	min-height: 200px;
-	width: 500px;
-	box-sizing: border-box;
-	padding: 20px;
-}
 .fa {padding: 0 5px 0 20px;}
 
 
@@ -390,6 +390,7 @@ border: 5px solid;
 border-color: #084a5c;
 background-color: #FFFFFF;
 padding: 20px;
+min-width: 250px;
 }
 
 label {
@@ -457,7 +458,19 @@ select {
 		box-sizing: border-box;
 		font-size: 18px;
 }
-/* search.html About Players Specific Styles */
+.search-content-area {
+	display: flex;
+	flex-direction: row;
+	align-items:flex-start;
+	margin: 100px auto;
+	padding: 20px;
+}
+.search-content-area section {
+	margin-left: 20px;
+	display: flex;
+	flex-wrap: wrap;
+}
+.search-content-area section article {margin-left: 20px;}
 
 /* about.html About Players Specific Styles */
 .content-area.about-content {
@@ -641,7 +654,21 @@ select {
 /*update.html mobile*/
 .pick-game-form {
 display: block;
-min-width: 100%;
+width: 100%;
+margin-top: 20px;
+}
+.search-content-area {
+	flex-wrap: wrap;
+	box-sizing: border-box;
+	padding: 0;
+}
+.search-content-area section {
+	margin: 0;
+}
+.search-content-area section article {
+	width: 100%;
+	margin: 20px 0 0 0;
+	min-width: auto;
 }
 /*about.html mobile*/
 .content-area.about-content article {
