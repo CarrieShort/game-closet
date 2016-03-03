@@ -93,8 +93,8 @@ function getRandomGameArrayElement(arr) {
 // render game item html
 function renderGameItem(gameItemIndex) {
   var gameItemContainer = document.createElement('article');
-  var gameItemContent = '<h2>' + gameItemIndex.gameName +
-    '</h2><p class="features"><i class="fa fa-user"></i>' + gameItemIndex.minPlayers +
+  var gameItemContent = '<h3>' + gameItemIndex.gameName +
+    '</h3><p class="features"><i class="fa fa-user"></i>' + gameItemIndex.minPlayers +
     '-' + gameItemIndex.maxPlayers + ' <i class="fa fa-clock-o"></i>' +
     gameItemIndex.time + ' <i class="fa-arrow-circle-up"></i>' + gameItemIndex.minAge +
     ' years and up</p><p class="description">' + gameItemIndex.gameDescription +
