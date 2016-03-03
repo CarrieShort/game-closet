@@ -252,7 +252,7 @@ if (localStorageOnPageLoad != 'none') {
 }
 
 // Call Render Functions
-userGameTrueChesck();
+userGameTrueCheck();
 
 buildListOfUserGames();
 
