@@ -84,6 +84,8 @@ function buildListOfUserGames() {
 }
 // **this function below is going to take our game array and shuffle it as well as use math.random to ensure that there are no duplicate items.**
 
+
+
 function getRandomGameArrayElement(arr) {
   var shuffled = arr.slice(0),
     i = arr.length,
@@ -119,7 +121,13 @@ function renderGameItem(gameItemIndex) {
 
 // Function that renders a random game from the listOfGames array
 function renderRandomGame() {
-  var randomGameArray = getRandomGameArrayElement(listOfGames);
+  if (listOfUserGames[0] != null) {
+    console.log('list of userGames not empty');
+    var randomGameArray = getRandomGameArrayElement(listOfUserGames);
+  } else {
+    console.log('list of userGames is empty');
+    var randomGameArray = getRandomGameArrayElement(listOfGames);
+  }
   var randomResult = renderGameItem(randomGameArray[0]);
   if (containerGenerateRandomGame) {
     containerGenerateRandomGame.textContent = '';
@@ -129,8 +137,10 @@ function renderRandomGame() {
 
 // This function checks if the games are in the user or public library and renders them in the correct location on update.html
 function userGameTrueCheck() {
-  containerUserGames.textContent = '';
-  containerBuiltInGameLibrary.textContent = '';
+  if (containerUserGames) {
+    containerUserGames.textContent = '';
+    containerBuiltInGameLibrary.textContent = '';
+  }
   for (var i = 0; i < listOfGames.length; i++) {
     var renderedGame = renderGameItem(listOfGames[i]);
     console.log('this is list of games i .userGame', listOfGames[i].userGame);
