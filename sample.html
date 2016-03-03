@@ -1,0 +1,26 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="stylesheet" type="text/css" href="style/style.css" />
+<form id="js-make-game-form" class="make-game-form ">
+  <fieldset>
+  <label for= "makename"> What is the name of your game? </label>
+  <input type="text" name="makename">
+  <label for= "makeplayers"> How many people does your game allow to play ?</label>
+  <input type="number" name="makeplayers" >
+  <label for= "makeage"> What is the minimum age required to play?</label>
+  <input type="number" name="makeage">
+  <label for= "maketime"> How long does this game take to play?</label>
+  <input type="number" name="maketime" >
+  <label for= "makeintoxicated"> Are you able to play this game while intoxicated? </label>
+  <div class="intoxicated-content">
+      <div class="intoxicated-content-div">
+      <label for="yes">Yes </label>
+      <input type="radio" name="makeintoxicated" value="true">
+    </div>
+    <div class="intoxicated-content-div">
+      <label for="no">No</label>
+      <input type="radio" name="makeintoxicated" value="false">
+    </div>
+  </div> <br>
+  <button type="submit" class="pick-game-button">Update Game Closet</button></a>
+</fieldset>
+</form>
