@@ -1,6 +1,8 @@
 'use strict';
 var listOfGames = [];
 
+var listOfUserGames = [];
+
 var containerGenerateRandomGame = document.getElementById(
   'js-generate-random-game');
 
@@ -73,14 +75,19 @@ function updateLocalStorage(arrayToBeStored, keyName) {
 }
 
 
-
-// **this function below is going to take our game array and shuffle it as well as use math.random to ensure that there are no duplicate items. This is especially helpful if we choose to return more than one iter. However; this may not be useful at all for single item returns.**
+function buildListOfUserGames() {
+  for (var i = 0; i < listOfGames.length; i++) {
+    if (listOfGames[i].userGame === true) {
+      listOfUserGames.push(listOfGames[i]);
+    }
+  }
+}
+// **this function below is going to take our game array and shuffle it as well as use math.random to ensure that there are no duplicate items.**
 
 function getRandomGameArrayElement(arr) {
   var shuffled = arr.slice(0),
     i = arr.length,
     min = i - 1,
-    // **line 14 can be adjusted to return any number of elements by changing the -1 to another number**
     temp, index;
 
   while (i-- > min) {
@@ -211,7 +218,8 @@ function searchFormDataHandler(event) {
     renderSearchResults(drunkMatches);
     updateLocalStorage(drunkMatches, 'stored list of search results');
   } else {
-    var soberMatches = checkForMatches(listOfGames, inputPlayers, inputAge, inputTime);
+    var soberMatches = checkForMatches(listOfGames, inputPlayers, inputAge,
+      inputTime);
     renderSearchResults(soberMatches);
     updateLocalStorage(soberMatches, 'stored list of search results');
   }
@@ -241,7 +249,7 @@ if (localStorageOnPageLoad != 'none') {
 
 // Call Render Functions
 userGameTrueCheck();
-
+buildListOfUserGames(listOfGames);
 //event listeners
 // event listener home page
 if (randomGameButton) {
