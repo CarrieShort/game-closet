@@ -187,9 +187,30 @@ nav ul li a {
 	color: #ffffff;
 	text-align: center;
 	display: flex;
-	align-items: center;
 	justify-content: center;
-	padding:0 50px;
+	padding: 0 50px;
+	overflow-y: hidden;
+}
+.random-result article.game-item p.description {
+	color: #FFFFFF;
+	font-size: 18px;
+	word-wrap: break-word;
+	text-align: left;
+	max-height: 100px;
+	overflow: hidden;
+	margin-top: 0;
+}
+.random-result article.game-item p.features {
+	color: #FFFFFF;
+	font-size: 18px;
+	margin-top: 0;
+	text-align: left;
+}
+.random-result article.game-item h3 {
+	padding-top: 10px;
+}
+.random-result p {
+	margin-top: 80px;
 }
 .left-arrow {
 	background: url(../img/left-arrow.png) no-repeat;
@@ -360,7 +381,7 @@ nav ul li a {
 .game-item h3{
 	text-align:center;
 	margin: 1%;
-	font-size: 28px;
+	font-size: 24px;
 }
 .features{
 	color: #1aa4ba;
