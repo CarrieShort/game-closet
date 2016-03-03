@@ -122,6 +122,8 @@ function renderRandomGame() {
 
 // This function checks if the games are in the user or public library and renders them in the correct location on update.html
 function userGameTrueCheck() {
+  containerUserGames.textContent= '';
+  containerBuiltInGameLibrary.textContent= '';
   for (var i = 0; i < listOfGames.length; i++) {
     var renderedGame = renderGameItem(listOfGames[i]);
     console.log('this is list of games i .userGame', listOfGames[i].userGame);
