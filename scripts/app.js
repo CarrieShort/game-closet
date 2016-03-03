@@ -58,7 +58,7 @@ function buildInitialListOfGames() {
 
 //**check local storage **
 function checkLocalStorage(keyName) {
-  if (window.localStorage.length !== 0) {
+  if (localStorage.getItem(keyName) !== null) {
     var storedUserGame = localStorage.getItem(keyName);
     var parsedUserGame = JSON.parse(storedUserGame);
     return parsedUserGame;
