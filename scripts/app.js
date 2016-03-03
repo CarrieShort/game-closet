@@ -9,15 +9,13 @@ var containerGenerateRandomGame = document.getElementById(
   'js-generate-random-game');
 
 // Variables for JavaScript elements on search.html
-var containerGameSearchResults = document.getElementById(
-  'js-game-search-results');
+var containerGameSearchResults = document.getElementById('js-game-search-results');
 var formGameSearchInputs = document.getElementById('js-pick-game-form');
 var buttonGameSearchSubmit = document.getElementById('js-game-search-submit');
 
 // Variables for JavaScript elements on update.html
 var containerUserGames = document.getElementById('js-user-games-container');
-var containerBuiltInGameLibrary = document.getElementById(
-  'js-built-in-game-library');
+var containerBuiltInGameLibrary = document.getElementById('js-built-in-game-library');
 
 // Variables for event listeners
 var randomGameButton = document.getElementById('js-generate-random-game-button');
