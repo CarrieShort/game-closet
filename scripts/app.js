@@ -164,7 +164,6 @@ function userGameTrueCheck() {
 
 function renderSearchResults(array) {
   for (var i = 0; i < array.length; i++) {
-    containerGameSearchResults.textContent = '';
     var renderedGame = renderGameItem(array[i]);
     containerGameSearchResults.appendChild(renderedGame);
 
@@ -223,6 +222,7 @@ function checkForMatches(array, input1, input2, input3) {
   console.log(searchResults[0]);
   if (searchResults[0] != null) {
     console.log('there were search results');
+    containerGameSearchResults.textContent = '';
   } else {
     console.log('there were none');
     containerGameSearchResults.textContent = '';
