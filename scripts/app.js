@@ -57,12 +57,13 @@ function buildInitialListOfGames() {
 }
 
 //**check local storage **
-function checkLocalStorage(arrayToBeStored, keyName) {
+function checkLocalStorage(keyName) {
   if (window.localStorage.length !== 0) {
     var storedUserGame = localStorage.getItem(keyName);
     var parsedUserGame = JSON.parse(storedUserGame);
-    arrayToBeStored = parsedUserGame;
+    return parsedUserGame;
   }
+  return 'none';
 }
 
 //**local storage function to store listofGames array**
@@ -123,6 +124,7 @@ function renderRandomGame() {
 function userGameTrueCheck() {
   for (var i = 0; i < listOfGames.length; i++) {
     var renderedGame = renderGameItem(listOfGames[i]);
+    console.log('this is list of games i .userGame', listOfGames[i].userGame);
     if (listOfGames[i].userGame === true) {
       if (containerUserGames) {
         containerUserGames.appendChild(renderedGame);
@@ -147,10 +149,10 @@ function renderSearchResults(array) {
 function toggleUserGameValue(toggleTarget) {
   if (toggleTarget.userGame === true) {
     toggleTarget.userGame = false;
-    console.table(listOfGames[i]);
+    console.log(listOfGames[i]);
   } else {
     toggleTarget.userGame = true;
-    console.table(listOfGames[i]);
+    console.log(listOfGames[i]);
   }
 }
 
@@ -229,25 +231,34 @@ function toggleMobileMenu(){
   }
 }
 
-//This should be called only when local storage blank
-buildInitialListOfGames();
+//Call local storage
+var localStorageOnPageLoad = checkLocalStorage('stored list of games');
+if(localStorageOnPageLoad !='none') {
+  listOfGames = localStorageOnPageLoad;
+} else {
+  //This should be called only when local storage blank
+  buildInitialListOfGames();
+}
 
 // Call Render Functions
 userGameTrueCheck();
 
-//Call local storage
-checkLocalStorage(listOfGames, 'stored list of games');
-updateLocalStorage(listOfGames, 'stored list of games');
-
-//event listener on home page for getRandomGameArrayElement
+//event listeners
+// event listener home page
 if (randomGameButton) {
   randomGameButton.addEventListener('click', renderRandomGame);
 }
 
+// event listener on user game closet library page
 for (var i = 0; i < containerGameItem.length; i++) {
   containerGameItem[i].addEventListener('click', moveGameItem);
 }
+
 if (buttonMobileMenu) {
   buttonMobileMenu.addEventListener('click', toggleMobileMenu);
 }
-formGameSearchInputs.addEventListener('submit', searchFormDataHandler);
+
+// event listener for search form
+if(formGameSearchInputs){
+  formGameSearchInputs.addEventListener('submit', searchFormDataHandler);
+}
