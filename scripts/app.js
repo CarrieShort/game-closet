@@ -226,7 +226,8 @@ function checkForMatches(array, input1, input2, input3) {
   } else {
     console.log('there were none');
     containerGameSearchResults.textContent = '';
-    containerGameSearchResults.innerHTML = '<p>I made a thing</p>';
+    containerGameSearchResults.innerHTML =
+      '<p>Your search has not returned any results.</p>';
   }
   console.log(searchResults);
   return searchResults;
@@ -267,7 +268,7 @@ function toggleMobileMenu() {
   }
 }
 
-function formDataSave(keyName, valueLocation){
+function formDataSave(keyName, valueLocation) {
   console.log('Keyup on input field occured');
   var inputPlayers = valueLocation.value;
   console.log(inputPlayers);
@@ -275,27 +276,29 @@ function formDataSave(keyName, valueLocation){
 }
 
 // functions for page refresh on search page
-function populateSearchFormData(keyName, valueLocation){
-  var JSFormLocal = checkLocalStorage(keyName); console.log('populate search form');
-  if (JSFormLocal != 'none'){
+function populateSearchFormData(keyName, valueLocation) {
+  var JSFormLocal = checkLocalStorage(keyName);
+  console.log('populate search form');
+  if (JSFormLocal != 'none') {
     console.log('JSFormLocal fired');
     console.log(JSFormLocal);
-    if (valueLocation){
+    if (valueLocation) {
       valueLocation.value = JSFormLocal;
     }
   }
 }
 
-function populateRadioButtons(){
-  var JSFormLocal = checkLocalStorage('radiobutton'); console.log('populate radio button');
-  if (JSFormLocal === 'true'){
+function populateRadioButtons() {
+  var JSFormLocal = checkLocalStorage('radiobutton');
+  console.log('populate radio button');
+  if (JSFormLocal === 'true') {
     console.log('JSFormLocal fired');
     console.log(JSFormLocal);
-    if(JSYes){
+    if (JSYes) {
       JSYes.checked = true;
     }
   } else if (JSFormLocal === 'false') {
-    if(JSYes){
+    if (JSYes) {
       JSNo.checked = true;
     }
   }
@@ -348,26 +351,26 @@ if (buttonMobileMenu) {
 if (formGameSearchInputs) {
   formGameSearchInputs.addEventListener('submit', searchFormDataHandler);
 }
-if (JSPlayers){
-  JSPlayers.addEventListener('keyup', function(){
+if (JSPlayers) {
+  JSPlayers.addEventListener('keyup', function () {
     formDataSave('number of players', JSPlayers);
   });
 }
-if (JSAge){
-  JSAge.addEventListener('keyup', function(){
+if (JSAge) {
+  JSAge.addEventListener('keyup', function () {
     formDataSave('age of players', JSAge);
   });
 }
-if (JSTime){
-  JSTime.addEventListener('blur', function(){
+if (JSTime) {
+  JSTime.addEventListener('blur', function () {
     formDataSave('time to play', JSTime);
   });
 }
-if (JSYes || JSNo){
-  JSYes.addEventListener('click', function(){
+if (JSYes || JSNo) {
+  JSYes.addEventListener('click', function () {
     formDataSave('radiobutton', JSYes);
   });
-  JSNo.addEventListener('click', function(){
+  JSNo.addEventListener('click', function () {
     formDataSave('radiobutton', JSNo);
   });
 }
