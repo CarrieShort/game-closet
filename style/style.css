@@ -53,13 +53,16 @@ table {
 	border-spacing: 0;
 }
 
+/* ---------------------- */
 /* Global Styles */
+/* ---------------------- */
 body {
 	background-color: #f8f4e7;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 62.5%;
 }
 
+/* Logo */
 h1 {
 	background-image: url("../img/logo-bg.png");
 	font-family: 'Rye', cursive;
@@ -80,6 +83,8 @@ h1 {
 	position: absolute;
 	left: 0;
 }
+
+/* Headers */
 h2 {
 	font-family:'Rye', cursive;
 	color: #084a5c;
@@ -94,6 +99,8 @@ h3 {
 	margin: 2%;
 	font-size: 3.0em;
 }
+
+/* Button */
 .button {
 	display: block;
 	background: #1aa4ba;
@@ -113,6 +120,7 @@ h3 {
  background: #084a5c;
 }
 
+/* Header for all Sub Pages */
 header {
 width: 100%;
 height: 100%;
@@ -138,13 +146,15 @@ nav ul li a {
 	text-decoration: none;
 	font-size: 2.2em;
 }
+
+/* Footer */
 footer {
 	text-align: center;
 	color: #979797;
 }
-.content-area {
-	margin-top: 100px;
-}
+
+/* Content Area */
+
 .mobile-menu-open,.mobile-menu-closed {
 	display: none;
 }
@@ -158,23 +168,14 @@ footer {
 	padding: 20px;
 	position: relative;
 }
-.user-games .game-item .fa-minus-circle,.library .game-item .fa-plus-circle {
-	font-size: 50px;
-	color: #c14545;
-	position: absolute;
-	top: 0;
-	right: 0;
-	cursor: pointer;
-	color: #c14545;
-}
-.user-games .game-item:hover .fa-minus-circle,.library .game-item:hover .fa-plus-circle {
-	display: block;
-}
-.library .game-item .fa-plus-circle {
-	color: #48c145;
+
+.game-item .fa {
+	padding: 0 2px 0 10px;
 }
 
-/* index.html - Home Page Specific Styles */
+/* ---------------------- */
+/* Home Page Styles */
+/* ---------------------- */
 
 /* Header */
 .home-header {
@@ -311,6 +312,9 @@ footer {
 	height: 85px;
 	padding: 10px
 }
+.game-trail p:nth-child(3) {
+	width: 30%;
+}
 .game-trail p:first-child{
 	background:#d8ebee;
 	color:#084a5c;
@@ -387,7 +391,10 @@ footer {
 	right: 20px;
 	bottom: 20px;
 }
-/* update.html - Update Game Closet Specific Styles */
+
+/* ---------------------- */
+/* User Library Page - update.html */
+/* ---------------------- */
 .update-content-area div {
 	width: 100%;
 	display: flex;
@@ -402,9 +409,10 @@ footer {
 	flex-direction: column;
 }
 
-.about-content .fa {padding: 0 5px 0 20px;
- color: #2672AE;
- }
+.about-content .fa {
+	padding: 0 5px 0 20px;
+	color: #2672AE;
+}
 
 .game-item .fa-minus-circle,.game-item .fa-plus-circle{display: none;}
 .game-item h3{
@@ -416,16 +424,37 @@ footer {
 	color: #1aa4ba;
 	text-align:center;
 	font-size: 2.4em;
-	padding: 5px 0;
+	padding: 10px 0;
+	text-align: left;
 }
 .description{
 	color: #979797;
-	text-align:center;
+	text-align:left;
 	padding: 10px;
 	font-size: 1.8em;
+	line-height: 1.6em;
 }
 
-/* search.html Search Game Closet Specific Styles */
+/* Plus and Minus icons on library page */
+.user-games .game-item .fa-minus-circle,.library .game-item .fa-plus-circle {
+	font-size: 50px;
+	color: #c14545;
+	position: absolute;
+	top: 0;
+	right: 0;
+	cursor: pointer;
+	color: #c14545;
+}
+.user-games .game-item:hover .fa-minus-circle,.library .game-item:hover .fa-plus-circle {
+	display: block;
+}
+.library .game-item .fa-plus-circle {
+	color: #48c145;
+}
+
+/* ---------------------- */
+/* Search Page - search.html */
+/* ---------------------- */
 .search-header h2{
 	margin-top: 3%;
 	width:100%;
@@ -517,7 +546,7 @@ select {
 	display: flex;
 	flex-direction: row;
 	align-items:flex-start;
-	margin: 100px auto;
+	margin: 0 auto;
 	padding: 20px;
 }
 .search-content-area section {
@@ -540,7 +569,10 @@ select {
 }
 .search-content-area section article {margin-left: 20px;}
 
-/* about.html About Players Specific Styles */
+/* ---------------------- */
+/* About Players - about.html */
+/* ---------------------- */
+
 .content-area.about-content {
 	display:flex;
 	flex-direction: row;
@@ -581,10 +613,11 @@ select {
 	line-height: 28px;
 }
 
+/* ---------------------- */
+/* Mobile Queries for Responsive */
+/* ---------------------- */
 
-
-/* Media Queries for Responsive */
-
+/* 870px and smaller */
 @media screen and (max-width: 870px) {
   .game-trail p:nth-child(2n+0) {
 		display: none;
@@ -601,8 +634,9 @@ select {
 	.random-result {
 		width: 30%;
 	}
-}
+}/*closing bracket for media query*/
 
+/* 790px and smaller */
 @media screen and (max-width: 790px) {
 	.game-trail p:nth-child(5) {
 		display: none;
@@ -610,10 +644,19 @@ select {
 	.game-trail p:nth-child(3) {
 		width: 40%;
 	}
-	.home-summary {width: 100%;}
+	.home-summary {
+		width: 100%;
+	}
+	.home-nav ul li , nav ul li {
+		padding-left: 25px;
+	}
+	.home-nav ul li a, nav ul li a {
+		font-size: 1.8em;
+	}
 
-}
+}/*closing bracket for media query*/
 
+/* 600px and smaller - True Mobile */
 @media screen and (max-width: 600px) {
 	.game-trail p:nth-child(1), .game-trail p:nth-child(5){
 		display: none;
@@ -708,6 +751,7 @@ select {
 	right: 10px;
 	color: #ffffff;
 	z-index: 50;
+	font-size: 16px;
 }
 .content-area {
 	padding: 10px;
@@ -736,8 +780,8 @@ select {
 	left: 10px;
 	right: 10px;
 	padding: 0;
-
 }
+
 .home-nav ul li, nav ul li {
 	display: block;
 	font-size: 30px;
@@ -747,6 +791,7 @@ select {
 .home-nav ul li a, nav ul li a {
 	color: #084a5c;
 	display: block;
+	font-size: 1.4em;
 }
 
 /*mobile seach form*/
@@ -780,8 +825,5 @@ box-sizing:border-box;
 	font-size: 40px;
 }
 
-.content-area {
-	margin-top: 120px;
-}
-/*closing bracket for mobile*/
-}
+
+}/*closing bracket for media query*/
