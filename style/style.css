@@ -154,7 +154,24 @@ footer {
 	width: 500px;
 	box-sizing: border-box;
 	padding: 20px;
+	position: relative;
 }
+.user-games .game-item .fa-minus-circle,.library .game-item .fa-plus-circle {
+	font-size: 50px;
+	color: #c14545;
+	position: absolute;
+	top: 0;
+	right: 0;
+	cursor: pointer;
+	color: #c14545;
+}
+.user-games .game-item:hover .fa-minus-circle,.library .game-item:hover .fa-plus-circle {
+	display: block;
+}
+.library .game-item .fa-plus-circle {
+	color: #48c145;
+}
+
 /* index.html - Home Page Specific Styles */
 
 /* Header */
@@ -380,7 +397,7 @@ footer {
 
 .fa {padding: 0 5px 0 20px;}
 
-
+.game-item .fa-minus-circle,.game-item .fa-plus-circle{display: none;}
 .game-item h3{
 	text-align:center;
 	margin: 1%;
@@ -529,6 +546,8 @@ select {
 	margin: 5% 1% 1% 1%;
 	line-height: 18px;
 }
+
+
 
 /* Media Queries for Responsive */
 
@@ -717,6 +736,11 @@ box-sizing:border-box;
 	min-width: 100%;
 	margin-bottom: 15px;
 }
+.user-games .game-item .fa-minus-circle,.library .game-item .fa-plus-circle {
+	display: block;
+	font-size: 40px;
+}
+
 .content-area {
 	margin-top: 120px;
 }
