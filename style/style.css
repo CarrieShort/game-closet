@@ -57,6 +57,7 @@ table {
 body {
 	background-color: #f8f4e7;
 	font-family: 'Open Sans', sans-serif;
+	font-size: 62.5%;
 }
 
 h1 {
@@ -68,7 +69,7 @@ h1 {
 	background-repeat: no-repeat;
 	height: 100px;
 	width: 125px;
-	font-size: 1.747em;
+	font-size: 3.0em;
 	transform: rotate(-15deg);
 	display:flex;
 	justify-content:flex-start;
@@ -84,21 +85,21 @@ h2 {
 	color: #084a5c;
 	text-align: center;
 	margin: 2%;
-	font-size: 1.747em;
+	font-size: 2.8em;
 }
 h3 {
 	font-family:'Rye', cursive;
 	color: #084a5c;
 	text-align: center;
 	margin: 2%;
-	font-size: 1.747em;
+	font-size: 3.0em;
 }
 .button {
 	display: block;
 	background: #1aa4ba;
   color: #FFF;
 	font: inherit;
-	font-size: 16px;
+	font-size: 1.6em;
 	text-align: center;
 	border: 5px;
 	transition: all 0.3s ease 0s;
@@ -135,6 +136,7 @@ nav ul li {
 nav ul li a {
 	color: #FFFFFF;
 	text-decoration: none;
+	font-size: 2.2em;
 }
 footer {
 	text-align: center;
@@ -190,12 +192,12 @@ footer {
 	width: 219px;
 	height: 159px;
 	padding-top: 60px;
-	font-size: 40px;
+	font-size: 4.4em;
 	position: relative;
 	transform: rotate(0deg);
 	margin: 0;
 }
-.home-header span.tilt {transform: rotate(-15deg);}
+.home-header span.tilt {transform: rotate(-18deg);}
 .home-header h1 span.arrow-down {
 	display: block;
 	width: 30px;
@@ -221,7 +223,7 @@ footer {
 }
 .random-result article.game-item p.description {
 	color: #FFFFFF;
-	font-size: 18px;
+	font-size: 2.0em;
 	word-wrap: break-word;
 	text-align: left;
 	max-height: 100px;
@@ -231,7 +233,7 @@ footer {
 }
 .random-result article.game-item p.features {
 	color: #FFFFFF;
-	font-size: 18px;
+	font-size: 1.8em;
 	margin-top: 0;
 	text-align: left;
 }
@@ -240,6 +242,7 @@ footer {
 }
 .random-result p {
 	margin-top: 80px;
+	font-size: 2.4em;
 }
 .left-arrow {
 	background: url(../img/left-arrow.png) no-repeat;
@@ -286,6 +289,7 @@ footer {
 	clear: both;
 	align-items: center;
 	margin-top:30px;
+	font-size: 2.0em;
 }
 .game-trail p {
 	width: 20%;
@@ -323,13 +327,13 @@ footer {
 	color:#084a5c;
 	text-align: center;
 	font-family:'Rye', cursive;
-	font-size: 40px;
+	font-size: 1.6em;
 	line-height: 40px;
 	width: 189px;
 	position: relative;
 }
 .game-trail p:last-child span {
-	font-size: 20px;
+	font-size: 1.0em;
 	display: block;
 }
 .game-trail p:last-child:before, .game-trail p:first-child:before {
@@ -361,6 +365,7 @@ footer {
 	width: 35%;
 	min-height: 35%;
 	margin: 2%;
+	font-size: 1.2em;
 }
 
 .content-area.home-content-area img {
@@ -373,9 +378,11 @@ footer {
 	text-align: center;
 	color: #979797;
 	margin: 1%;
+	font-size: 1.6em;
 }
 .content-area.home-content-area article .button {
 	position: absolute;
+	font-size: 2.0em;
 	left: 20px;
 	right: 20px;
 	bottom: 20px;
@@ -395,28 +402,35 @@ footer {
 	flex-direction: column;
 }
 
-.fa {padding: 0 5px 0 20px;}
+.about-content .fa {padding: 0 5px 0 20px;
+ color: #2672AE;
+ }
 
 .game-item .fa-minus-circle,.game-item .fa-plus-circle{display: none;}
 .game-item h3{
 	text-align:center;
 	margin: 1%;
-	font-size: 24px;
+	font-size: 2.4em;
 }
 .features{
 	color: #1aa4ba;
 	text-align:center;
-	font-size: 24px;
+	font-size: 2.4em;
 	padding: 5px 0;
 }
 .description{
 	color: #979797;
 	text-align:center;
 	padding: 10px;
-	font-size: 18px;
+	font-size: 1.8em;
 }
 
 /* search.html Search Game Closet Specific Styles */
+.search-header h2{
+	margin-top: 3%;
+	width:100%;
+	font-size: 4.0em;
+}
 .content-area-search-content-area {
 	padding-top: 60px;
 }
@@ -435,9 +449,10 @@ label {
 	display: block;
   clear: left;
   padding-bottom: 10px;
-	color: #BDBDBD;
+	color: #949191;
 	padding-top: 10px;
 	padding-bottom: 10px;
+	font-size: 1.8em;
 }
 
 input {
@@ -451,6 +466,7 @@ input {
 	box-sizing: border-box;
 	line-height: 20px;
 	margin-bottom: 30px;
+	font-size: 1.4em;
 }
 
 select {
@@ -470,10 +486,11 @@ select {
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
   border-radius: 4px;
+	font-size: 1.4em;
 }
 
 .intoxicated-content-div {
-	width: 20%;
+	width: 40%;
 	float: left;
 	clear: none;
 }
@@ -494,7 +511,7 @@ select {
 		border: 5px;
 		clear: both;
 		box-sizing: border-box;
-		font-size: 18px;
+		font-size: 1.8em;
 }
 .search-content-area {
 	display: flex;
@@ -506,6 +523,20 @@ select {
 .search-content-area section {
 	display: flex;
 	flex-wrap: wrap;
+}
+.game-search-results p {
+	display:flex;
+	align-content: center;
+	margin-left: 3%;
+	margin-top: 5%;
+	height: 11em;
+	width: 25em;
+	border: 5px solid #084a5c;
+	background-image:url('http://i.imgur.com/OGaw90q.png');
+	background-repeat: no-repeat;
+	background-size: auto;
+	font-size: 2.0em;
+	color:#f6f1f5;
 }
 .search-content-area section article {margin-left: 20px;}
 
@@ -528,8 +559,9 @@ select {
 	min-height: 25%;
 	min-width: 250px;
 }
-.content-area.about-content h2 {
-	margin-top: 3%;
+.about-us-header h2 {
+	margin-top: 4%;
+	font-size: 4.0em;
 }
 .content-area.about-content img{
 	display:flex;
@@ -540,11 +572,13 @@ select {
 	width: 90%;
 	border: 5px solid #084a5c;
 }
+
 .content-area.about-content p {
+  font-size:1.6em;
 	text-align: center;
 	color: #979797;
 	margin: 5% 1% 1% 1%;
-	line-height: 18px;
+	line-height: 28px;
 }
 
 
@@ -622,7 +656,7 @@ select {
 		padding: 0;
 		position: relative;
 		z-index: 200;
-		font-size: 30px;
+		font-size: 3.0em;
 		padding-top: 40px;
 		position: absolute;
 		top: 0;
@@ -675,15 +709,20 @@ select {
 	color: #ffffff;
 	z-index: 50;
 }
-.content-area {padding: 10px;
-flex-direction: column;}
+.content-area {
+	padding: 10px;
+	flex-direction: column;
+}
+
 .content-area.about-content {
 	flex-direction: column;
 }
+
 .content-area.about-content article {
 	box-sizing: border-box;
 	margin: 0;
 }
+
 .home-nav ul, nav ul {
 	display: none;
 	position: absolute;

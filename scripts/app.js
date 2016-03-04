@@ -20,6 +20,7 @@ var JSAge = document.getElementById('js-age');
 var JSTime = document.getElementById('js-time');
 var JSYes = document.getElementById('js-yes');
 var JSNo = document.getElementById('js-no');
+var ohNo = new Audio('assets/mongo_pawn.mp3'); // buffers automatically when created
 
 
 
@@ -222,9 +223,12 @@ function checkForMatches(array, input1, input2, input3) {
   if (searchResults[0] != null) {
     containerGameSearchResults.textContent = '';
   } else {
+    ohNo.play();
     containerGameSearchResults.textContent = '';
     containerGameSearchResults.innerHTML =
       '<p>Your search has not returned any results.</p>';
+    // buffers automatically when created
+    // **will play a sound on no result found**
   }
   return searchResults;
 }
