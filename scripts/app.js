@@ -221,7 +221,7 @@ function checkForMatches(array, input1, input2, input3) {
     ohNo.play();
     containerGameSearchResults.textContent = '';
     containerGameSearchResults.innerHTML =
-      '<p>Your search has not returned any results.</p>';
+      '<p class="sad-mongo">Your search has not returned any results.</p>';
     // buffers automatically when created
     // **will play a sound on no result found**
   }
