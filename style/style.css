@@ -409,6 +409,10 @@ footer {
 	flex-direction: column;
 }
 
+.update-content-area h2{
+	font-size: 4em;
+}
+
 .about-content .fa {
 	padding: 0 5px 0 20px;
 	color: #2672AE;
@@ -418,7 +422,7 @@ footer {
 .game-item h3{
 	text-align:center;
 	margin: 1%;
-	font-size: 2.4em;
+	font-size: 3em;
 }
 .features{
 	color: #1aa4ba;
@@ -824,6 +828,15 @@ box-sizing:border-box;
 	display: block;
 	font-size: 40px;
 }
+
+/* Fix Headers */
+.about-us-header, .search-header {
+	margin-top: 130px;
+}
+.update-content-area {
+	margin-top: 100px;
+}
+
 
 
 }/*closing bracket for media query*/
