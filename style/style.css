@@ -57,6 +57,7 @@ table {
 body {
 	background-color: #f8f4e7;
 	font-family: 'Open Sans', sans-serif;
+	font-size: 62.5%;
 }
 
 h1 {
@@ -68,7 +69,7 @@ h1 {
 	background-repeat: no-repeat;
 	height: 100px;
 	width: 125px;
-	font-size: 1.747em;
+	font-size: 3.0em;
 	transform: rotate(-15deg);
 	display:flex;
 	justify-content:flex-start;
@@ -84,21 +85,21 @@ h2 {
 	color: #084a5c;
 	text-align: center;
 	margin: 2%;
-	font-size: 1.747em;
+	font-size: 2.8em;
 }
 h3 {
 	font-family:'Rye', cursive;
 	color: #084a5c;
 	text-align: center;
 	margin: 2%;
-	font-size: 1.747em;
+	font-size: 3.0em;
 }
 .button {
 	display: inline-block;
 	background: #1aa4ba;
   color: #FFF;
 	font: inherit;
-	font-size: 16px;
+	font-size: 1.6px;
 	height: 40px;
   width: 170px;
 	line-height: 40px;
@@ -136,6 +137,7 @@ nav ul li {
 nav ul li a {
 	color: #FFFFFF;
 	text-decoration: none;
+	font-size: 2.2em;
 }
 footer {
 	text-align: center;
@@ -174,12 +176,12 @@ footer {
 	width: 219px;
 	height: 159px;
 	padding-top: 60px;
-	font-size: 40px;
+	font-size: 4.4em;
 	position: relative;
 	transform: rotate(0deg);
 	margin: 0;
 }
-.home-header span.tilt {transform: rotate(-15deg);}
+.home-header span.tilt {transform: rotate(-18deg);}
 .home-header h1 span.arrow-down {
 	display: block;
 	width: 30px;
@@ -205,7 +207,7 @@ footer {
 }
 .random-result article.game-item p.description {
 	color: #FFFFFF;
-	font-size: 18px;
+	font-size: 2.0em;
 	word-wrap: break-word;
 	text-align: left;
 	max-height: 100px;
@@ -215,7 +217,7 @@ footer {
 }
 .random-result article.game-item p.features {
 	color: #FFFFFF;
-	font-size: 18px;
+	font-size: 1.8em;
 	margin-top: 0;
 	text-align: left;
 }
@@ -224,6 +226,7 @@ footer {
 }
 .random-result p {
 	margin-top: 80px;
+	font-size: 2.4em;
 }
 .left-arrow {
 	background: url(../img/left-arrow.png) no-repeat;
@@ -270,6 +273,7 @@ footer {
 	clear: both;
 	align-items: center;
 	margin-top:30px;
+	font-size: 2.0em;
 }
 .game-trail p {
 	width: 20%;
@@ -307,13 +311,13 @@ footer {
 	color:#084a5c;
 	text-align: center;
 	font-family:'Rye', cursive;
-	font-size: 40px;
+	font-size: 1.6em;
 	line-height: 40px;
 	width: 189px;
 	position: relative;
 }
 .game-trail p:last-child span {
-	font-size: 20px;
+	font-size: 1.0em;
 	display: block;
 }
 .game-trail p:last-child:before, .game-trail p:first-child:before {
@@ -345,6 +349,7 @@ footer {
 	width: 35%;
 	min-height: 35%;
 	margin: 2%;
+	font-size: 1.2em;
 }
 
 .content-area.home-content-area img {
@@ -357,12 +362,14 @@ footer {
 	text-align: center;
 	color: #979797;
 	margin: 1%;
+	font-size: 1.6em;
 }
 .content-area.home-content-area article .button {
 	margin-left: 5%;
 	position: absolute;
 	width: 80%;
 	bottom: 0;
+	font-size: 2.0em;
 }
 /* update.html - Update Game Closet Specific Styles */
 .update-content-area div {
@@ -385,7 +392,7 @@ footer {
 .game-item h3{
 	text-align:center;
 	margin: 1%;
-	font-size: 24px;
+	font-size: 2.4em;
 }
 .features{
 	color: #1aa4ba;
@@ -478,7 +485,7 @@ select {
 		border: 5px;
 		clear: both;
 		box-sizing: border-box;
-		font-size: 18px;
+		font-size: 1.8em;
 }
 .search-content-area {
 	display: flex;
@@ -526,6 +533,7 @@ select {
 }
 
 .content-area.about-content p {
+  font-size:
 	text-align: center;
 	color: #979797;
 	margin: 5% 1% 1% 1%;
@@ -605,7 +613,7 @@ select {
 		padding: 0;
 		position: relative;
 		z-index: 200;
-		font-size: 30px;
+		font-size: 3.0em;
 		padding-top: 40px;
 		position: absolute;
 		top: 0;
