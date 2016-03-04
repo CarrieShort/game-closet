@@ -831,10 +831,10 @@ box-sizing:border-box;
 
 /* Fix Headers */
 .about-us-header, .search-header {
-	margin-top: 130px;
+	margin-top: 150px;
 }
 .update-content-area {
-	margin-top: 100px;
+	margin-top: 150px;
 }
 
 
