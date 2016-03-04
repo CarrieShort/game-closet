@@ -386,7 +386,9 @@ footer {
 	flex-direction: column;
 }
 
-.fa {padding: 0 5px 0 20px;}
+.fa {padding: 0 5px 0 20px;
+ color: #2672AE;
+ }
 
 
 .game-item h3{
@@ -519,8 +521,9 @@ select {
 	min-height: 25%;
 	min-width: 250px;
 }
-.content-area.about-content h2 {
-	margin-top: 3%;
+.about-us-header h2 {
+	margin-top: 4%;
+	font-size: 4.0em;
 }
 .content-area.about-content img{
 	display:flex;
@@ -533,11 +536,11 @@ select {
 }
 
 .content-area.about-content p {
-  font-size:
+  font-size:1.6em;
 	text-align: center;
 	color: #979797;
 	margin: 5% 1% 1% 1%;
-	line-height: 18px;
+	line-height: 28px;
 }
 
 /* Media Queries for Responsive */
