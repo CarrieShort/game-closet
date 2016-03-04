@@ -371,12 +371,12 @@ footer {
 	margin: 2%;
 	font-size: 1.2em;
 }
-
+.content-area.home-content-area .img-container {
+	height: 200px;
+	overflow: hidden;
+}
 .content-area.home-content-area img {
-	margin-left: 3%;
-	margin-top: 5%;
-	width: 95%;
-	height: 75%;
+	width: 100%;
 }
 .content-area.home-content-area p {
 	text-align: center;
