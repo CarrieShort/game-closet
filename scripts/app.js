@@ -10,24 +10,17 @@ var containerGenerateRandomGame = document.getElementById(
 var containerGenerateRandomGame = document.getElementById(
   'js-generate-random-game');
 
+// variables for JavaScript elements on sample.html
+// var makeGameSubmit= document.getElementById('js-make-game-form');
+
 // Variables for JavaScript elements on search.html
-var containerGameSearchResults = document.getElementById(
-  'js-game-search-results');
+var containerGameSearchResults = document.getElementById('js-game-search-results');
 var formGameSearchInputs = document.getElementById('js-pick-game-form');
 var buttonGameSearchSubmit = document.getElementById('js-game-search-submit');
-var JSPlayers = document.getElementById('js-players');
-var JSAge = document.getElementById('js-age');
-var JSTime = document.getElementById('js-time');
-var JSYes = document.getElementById('js-yes');
-var JSNo = document.getElementById('js-no');
-var ohNo = new Audio('assets/mongo_pawn.mp3'); // buffers automatically when created
-
-
 
 // Variables for JavaScript elements on update.html
 var containerUserGames = document.getElementById('js-user-games-container');
-var containerBuiltInGameLibrary = document.getElementById(
-  'js-built-in-game-library');
+var containerBuiltInGameLibrary = document.getElementById('js-built-in-game-library');
 
 // Variables for event listeners
 var randomGameButton = document.getElementById('js-generate-random-game-button');
@@ -119,7 +112,8 @@ function renderGameItem(gameItemIndex) {
     '-' + gameItemIndex.maxPlayers + ' <i class="fa fa-clock-o"></i>' +
     gameItemIndex.time + ' <i class="fa fa-arrow-circle-up"></i>' +
     gameItemIndex.minAge + ' years and up</p><p class="description">' +
-    gameItemIndex.gameDescription + '</p><i class="fa fa-minus-circle"></i><i class="fa fa-plus-circle"></i>';
+    gameItemIndex.gameDescription + '</p>';
+
   gameItemContainer.id = gameItemIndex.gameID;
   gameItemContainer.setAttribute('class', 'game-item');
   gameItemContainer.innerHTML = gameItemContent;
@@ -129,10 +123,8 @@ function renderGameItem(gameItemIndex) {
 // Function that renders a random game from the listOfGames array
 function renderRandomGame() {
   if (listOfUserGames[0] != null) {
-    console.log('list of userGames not empty');
     var randomGameArray = getRandomGameArrayElement(listOfUserGames);
   } else {
-    console.log('list of userGames is empty');
     var randomGameArray = getRandomGameArrayElement(listOfGames);
   }
   var randomResult = renderGameItem(randomGameArray[0]);
@@ -140,6 +132,10 @@ function renderRandomGame() {
     containerGenerateRandomGame.textContent = '';
     containerGenerateRandomGame.appendChild(randomResult);
   }
+}
+//function to retrieve input values
+function makeAgame (){
+  document.getElementById('js-make-game-form');
 }
 
 // This function checks if the games are in the user or public library and renders them in the correct location on update.html
@@ -150,7 +146,6 @@ function userGameTrueCheck() {
   }
   for (var i = 0; i < listOfGames.length; i++) {
     var renderedGame = renderGameItem(listOfGames[i]);
-    console.log('this is list of games i .userGame', listOfGames[i].userGame);
     if (listOfGames[i].userGame === true) {
       if (containerUserGames) {
         containerUserGames.appendChild(renderedGame);
@@ -164,6 +159,7 @@ function userGameTrueCheck() {
 }
 
 function renderSearchResults(array) {
+  containerGameSearchResults.textContent = '';
   for (var i = 0; i < array.length; i++) {
     var renderedGame = renderGameItem(array[i]);
     containerGameSearchResults.appendChild(renderedGame);
@@ -174,10 +170,8 @@ function renderSearchResults(array) {
 function toggleUserGameValue(toggleTarget) {
   if (toggleTarget.userGame === true) {
     toggleTarget.userGame = false;
-    // console.log(listOfGames[i]);
   } else {
     toggleTarget.userGame = true;
-    // console.log(listOfGames[i]);
   }
 }
 
@@ -220,16 +214,6 @@ function checkForMatches(array, input1, input2, input3) {
       }
     }
   }
-  if (searchResults[0] != null) {
-    containerGameSearchResults.textContent = '';
-  } else {
-    ohNo.play();
-    containerGameSearchResults.textContent = '';
-    containerGameSearchResults.innerHTML =
-      '<p>Your search has not returned any results.</p>';
-    // buffers automatically when created
-    // **will play a sound on no result found**
-  }
   return searchResults;
 }
 // **This is the event handler for the submission of the form by user**
@@ -258,7 +242,6 @@ function searchFormDataHandler(event) {
 }
 
 function toggleMobileMenu() {
-  console.log(this.className);
   if (this.className === 'mobile-menu-open') {
     this.className = 'mobile-menu-closed';
     containerMobileMenu.style.display = 'none';
@@ -268,41 +251,6 @@ function toggleMobileMenu() {
   }
 }
 
-function formDataSave(keyName, valueLocation) {
-  console.log('Keyup on input field occured');
-  var inputPlayers = valueLocation.value;
-  console.log(inputPlayers);
-  updateLocalStorage(inputPlayers, keyName);
-}
-
-// functions for page refresh on search page
-function populateSearchFormData(keyName, valueLocation) {
-  var JSFormLocal = checkLocalStorage(keyName);
-  console.log('populate search form');
-  if (JSFormLocal != 'none') {
-    console.log('JSFormLocal fired');
-    console.log(JSFormLocal);
-    if (valueLocation) {
-      valueLocation.value = JSFormLocal;
-    }
-  }
-}
-
-function populateRadioButtons() {
-  var JSFormLocal = checkLocalStorage('radiobutton');
-  console.log('populate radio button');
-  if (JSFormLocal === 'true') {
-    console.log('JSFormLocal fired');
-    console.log(JSFormLocal);
-    if (JSYes) {
-      JSYes.checked = true;
-    }
-  } else if (JSFormLocal === 'false') {
-    if (JSYes) {
-      JSNo.checked = true;
-    }
-  }
-}
 //Call local storage
 var localStorageOnPageLoad = checkLocalStorage('stored list of games');
 if (localStorageOnPageLoad != 'none') {
@@ -317,18 +265,16 @@ userGameTrueCheck();
 
 buildListOfUserGames();
 
+
 //Call listener Function
 addListenerToLibrary();
 
-// Populate search form on page refresh function
-populateSearchFormData('number of players', JSPlayers);
-populateSearchFormData('age of players', JSAge);
-populateSearchFormData('time to play', JSTime);
-populateRadioButtons('radiobutton', JSYes);
-populateRadioButtons('radiobutton', JSNo);
-
 
 //event listeners
+
+//event listener for make-a-game
+  // makeGameSubmit.addEventListener('click', BuildGameItem );
+
 // event listener home page
 if (randomGameButton) {
   randomGameButton.addEventListener('click', renderRandomGame);
@@ -337,8 +283,6 @@ if (randomGameButton) {
 // event listener on user game closet library page
 function addListenerToLibrary() {
   for (var i = 0; i < containerGameItem.length; i++) {
-    console.log(containerGameItem[i]);
-    console.log('add event listener function fired!');
     containerGameItem[i].addEventListener('click', moveGameItem);
   }
 }
@@ -350,27 +294,4 @@ if (buttonMobileMenu) {
 // event listener for search form
 if (formGameSearchInputs) {
   formGameSearchInputs.addEventListener('submit', searchFormDataHandler);
-}
-if (JSPlayers) {
-  JSPlayers.addEventListener('keyup', function () {
-    formDataSave('number of players', JSPlayers);
-  });
-}
-if (JSAge) {
-  JSAge.addEventListener('keyup', function () {
-    formDataSave('age of players', JSAge);
-  });
-}
-if (JSTime) {
-  JSTime.addEventListener('blur', function () {
-    formDataSave('time to play', JSTime);
-  });
-}
-if (JSYes || JSNo) {
-  JSYes.addEventListener('click', function () {
-    formDataSave('radiobutton', JSYes);
-  });
-  JSNo.addEventListener('click', function () {
-    formDataSave('radiobutton', JSNo);
-  });
 }
