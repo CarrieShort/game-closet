@@ -399,17 +399,22 @@ footer {
 .features{
 	color: #1aa4ba;
 	text-align:center;
-	font-size: 24px;
+	font-size: 2.4em;
 	padding: 5px 0;
 }
 .description{
 	color: #979797;
 	text-align:center;
 	padding: 10px;
-	font-size: 18px;
+	font-size: 1.8em;
 }
 
 /* search.html Search Game Closet Specific Styles */
+.search-header h2{
+	margin-top: 3%;
+	width:100%;
+	font-size: 4.0em;
+}
 .content-area-search-content-area {
 	padding-top: 60px;
 }
@@ -428,9 +433,10 @@ label {
 	display: block;
   clear: left;
   padding-bottom: 10px;
-	color: #BDBDBD;
+	color: #949191;
 	padding-top: 10px;
 	padding-bottom: 10px;
+	font-size: 1.8em;
 }
 
 input {
@@ -444,6 +450,7 @@ input {
 	box-sizing: border-box;
 	line-height: 20px;
 	margin-bottom: 30px;
+	font-size: 1.4em;
 }
 
 select {
@@ -463,10 +470,11 @@ select {
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
   border-radius: 4px;
+	font-size: 1.4em;
 }
 
 .intoxicated-content-div {
-	width: 20%;
+	width: 40%;
 	float: left;
 	clear: none;
 }
@@ -499,6 +507,20 @@ select {
 .search-content-area section {
 	display: flex;
 	flex-wrap: wrap;
+}
+.game-search-results p {
+	display:flex;
+	align-content: center;
+	margin-left: 3%;
+	margin-top: 5%;
+	height: 11em;
+	width: 25em;
+	border: 5px solid #084a5c;
+	background-image:url('http://i.imgur.com/OGaw90q.png');
+	background-repeat: no-repeat;
+	background-size: auto;
+	font-size: 2.0em;
+	color:#f6f1f5;
 }
 .search-content-area section article {margin-left: 20px;}
 
