@@ -553,7 +553,7 @@ select {
 	display: flex;
 	flex-wrap: wrap;
 }
-.game-search-results p {
+.game-search-results p.sad-mongo {
 	display:flex;
 	align-content: center;
 	margin-left: 3%;
