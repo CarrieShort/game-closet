@@ -94,23 +94,22 @@ h3 {
 	font-size: 1.747em;
 }
 .button {
-	display: inline-block;
+	display: block;
 	background: #1aa4ba;
   color: #FFF;
 	font: inherit;
 	font-size: 16px;
-	height: 40px;
-  width: 170px;
-	line-height: 40px;
-	margin: 25px 25px;
-	padding: 8px 8px;
 	text-align: center;
 	border: 5px;
 	transition: all 0.3s ease 0s;
+	text-decoration: none;
+	box-sizing: border-box;
+	border-radius: 5px;
+	padding: 20px 0;
 }
 
 .button:hover {
- color: #1aa4ba;
+ background: #084a5c;
 }
 
 header {
@@ -359,10 +358,10 @@ footer {
 	margin: 1%;
 }
 .content-area.home-content-area article .button {
-	margin-left: 5%;
 	position: absolute;
-	width: 80%;
-	bottom: 0;
+	left: 20px;
+	right: 20px;
+	bottom: 20px;
 }
 /* update.html - Update Game Closet Specific Styles */
 .update-content-area div {
@@ -551,7 +550,7 @@ select {
 	}
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 790px) {
 	.game-trail p:nth-child(5) {
 		display: none;
 	}
@@ -657,20 +656,27 @@ select {
 	color: #ffffff;
 	z-index: 50;
 }
-.content-area {padding: 10px;}
-
+.content-area {padding: 10px;
+flex-direction: column;}
+.content-area.about-content {
+	flex-direction: column;
+}
+.content-area.about-content article {
+	box-sizing: border-box;
+	margin: 0;
+}
 .home-nav ul, nav ul {
 	display: none;
 	position: absolute;
 	top: 120px;
 	background: #ffffff;
 	z-index: 500;
-	width: 86%;
 	height: 300px;
 	box-sizing: border-box;
 	border: 5px solid #084a5c;
 	margin: 0;
-	left: 2%;
+	left: 10px;
+	right: 10px;
 	padding: 0;
 
 }
@@ -682,6 +688,7 @@ select {
 }
 .home-nav ul li a, nav ul li a {
 	color: #084a5c;
+	display: block;
 }
 
 /*mobile seach form*/
@@ -691,6 +698,7 @@ select {
 display: block;
 width: 100%;
 margin-top: 20px;
+box-sizing:border-box;
 }
 .search-content-area {
 	flex-wrap: wrap;
@@ -707,6 +715,10 @@ margin-top: 20px;
 /*about.html mobile*/
 .content-area.about-content article {
 	min-width: 100%;
+	margin-bottom: 15px;
+}
+.content-area {
+	margin-top: 120px;
 }
 /*closing bracket for mobile*/
 }
