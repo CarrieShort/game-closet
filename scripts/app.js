@@ -118,7 +118,7 @@ function renderGameItem(gameItemIndex) {
     '-' + gameItemIndex.maxPlayers + ' <i class="fa fa-clock-o"></i>' +
     gameItemIndex.time + ' <i class="fa fa-arrow-circle-up"></i>' +
     gameItemIndex.minAge + ' years and up</p><p class="description">' +
-    gameItemIndex.gameDescription + '</p>';
+    gameItemIndex.gameDescription + '</p><i class="fa fa-minus-circle"></i><i class="fa fa-plus-circle"></i>';
   gameItemContainer.id = gameItemIndex.gameID;
   gameItemContainer.setAttribute('class', 'game-item');
   gameItemContainer.innerHTML = gameItemContent;
