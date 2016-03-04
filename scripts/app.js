@@ -129,10 +129,8 @@ function renderGameItem(gameItemIndex) {
 // Function that renders a random game from the listOfGames array
 function renderRandomGame() {
   if (listOfUserGames[0] != null) {
-    console.log('list of userGames not empty');
     var randomGameArray = getRandomGameArrayElement(listOfUserGames);
   } else {
-    console.log('list of userGames is empty');
     var randomGameArray = getRandomGameArrayElement(listOfGames);
   }
   var randomResult = renderGameItem(randomGameArray[0]);
@@ -150,7 +148,6 @@ function userGameTrueCheck() {
   }
   for (var i = 0; i < listOfGames.length; i++) {
     var renderedGame = renderGameItem(listOfGames[i]);
-    console.log('this is list of games i .userGame', listOfGames[i].userGame);
     if (listOfGames[i].userGame === true) {
       if (containerUserGames) {
         containerUserGames.appendChild(renderedGame);
@@ -174,10 +171,8 @@ function renderSearchResults(array) {
 function toggleUserGameValue(toggleTarget) {
   if (toggleTarget.userGame === true) {
     toggleTarget.userGame = false;
-    // console.log(listOfGames[i]);
   } else {
     toggleTarget.userGame = true;
-    // console.log(listOfGames[i]);
   }
 }
 
@@ -258,7 +253,6 @@ function searchFormDataHandler(event) {
 }
 
 function toggleMobileMenu() {
-  console.log(this.className);
   if (this.className === 'mobile-menu-open') {
     this.className = 'mobile-menu-closed';
     containerMobileMenu.style.display = 'none';
@@ -269,19 +263,15 @@ function toggleMobileMenu() {
 }
 
 function formDataSave(keyName, valueLocation) {
-  console.log('Keyup on input field occured');
   var inputPlayers = valueLocation.value;
-  console.log(inputPlayers);
   updateLocalStorage(inputPlayers, keyName);
 }
 
 // functions for page refresh on search page
 function populateSearchFormData(keyName, valueLocation) {
   var JSFormLocal = checkLocalStorage(keyName);
-  console.log('populate search form');
+
   if (JSFormLocal != 'none') {
-    console.log('JSFormLocal fired');
-    console.log(JSFormLocal);
     if (valueLocation) {
       valueLocation.value = JSFormLocal;
     }
@@ -290,10 +280,7 @@ function populateSearchFormData(keyName, valueLocation) {
 
 function populateRadioButtons() {
   var JSFormLocal = checkLocalStorage('radiobutton');
-  console.log('populate radio button');
   if (JSFormLocal === 'true') {
-    console.log('JSFormLocal fired');
-    console.log(JSFormLocal);
     if (JSYes) {
       JSYes.checked = true;
     }
@@ -337,8 +324,6 @@ if (randomGameButton) {
 // event listener on user game closet library page
 function addListenerToLibrary() {
   for (var i = 0; i < containerGameItem.length; i++) {
-    console.log(containerGameItem[i]);
-    console.log('add event listener function fired!');
     containerGameItem[i].addEventListener('click', moveGameItem);
   }
 }
