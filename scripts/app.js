@@ -164,6 +164,7 @@ function userGameTrueCheck() {
 
 function renderSearchResults(array) {
   for (var i = 0; i < array.length; i++) {
+    containerGameSearchResults.textContent = '';
     var renderedGame = renderGameItem(array[i]);
     containerGameSearchResults.appendChild(renderedGame);
 
