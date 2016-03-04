@@ -95,23 +95,22 @@ h3 {
 	font-size: 3.0em;
 }
 .button {
-	display: inline-block;
+	display: block;
 	background: #1aa4ba;
   color: #FFF;
 	font: inherit;
-	font-size: 1.6px;
-	height: 40px;
-  width: 170px;
-	line-height: 40px;
-	margin: 25px 25px;
-	padding: 8px 8px;
+	font-size: 1.6em;
 	text-align: center;
 	border: 5px;
 	transition: all 0.3s ease 0s;
+	text-decoration: none;
+	box-sizing: border-box;
+	border-radius: 5px;
+	padding: 20px 0;
 }
 
 .button:hover {
- color: #1aa4ba;
+ background: #084a5c;
 }
 
 header {
@@ -157,7 +156,24 @@ footer {
 	width: 500px;
 	box-sizing: border-box;
 	padding: 20px;
+	position: relative;
 }
+.user-games .game-item .fa-minus-circle,.library .game-item .fa-plus-circle {
+	font-size: 50px;
+	color: #c14545;
+	position: absolute;
+	top: 0;
+	right: 0;
+	cursor: pointer;
+	color: #c14545;
+}
+.user-games .game-item:hover .fa-minus-circle,.library .game-item:hover .fa-plus-circle {
+	display: block;
+}
+.library .game-item .fa-plus-circle {
+	color: #48c145;
+}
+
 /* index.html - Home Page Specific Styles */
 
 /* Header */
@@ -365,11 +381,11 @@ footer {
 	font-size: 1.6em;
 }
 .content-area.home-content-area article .button {
-	margin-left: 5%;
 	position: absolute;
-	width: 80%;
-	bottom: 0;
 	font-size: 2.0em;
+	left: 20px;
+	right: 20px;
+	bottom: 20px;
 }
 /* update.html - Update Game Closet Specific Styles */
 .update-content-area div {
@@ -390,7 +406,7 @@ footer {
  color: #2672AE;
  }
 
-
+.game-item .fa-minus-circle,.game-item .fa-plus-circle{display: none;}
 .game-item h3{
 	text-align:center;
 	margin: 1%;
@@ -565,6 +581,8 @@ select {
 	line-height: 28px;
 }
 
+
+
 /* Media Queries for Responsive */
 
 @media screen and (max-width: 870px) {
@@ -585,7 +603,7 @@ select {
 	}
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 790px) {
 	.game-trail p:nth-child(5) {
 		display: none;
 	}
@@ -691,7 +709,19 @@ select {
 	color: #ffffff;
 	z-index: 50;
 }
-.content-area {padding: 10px;}
+.content-area {
+	padding: 10px;
+	flex-direction: column;
+}
+
+.content-area.about-content {
+	flex-direction: column;
+}
+
+.content-area.about-content article {
+	box-sizing: border-box;
+	margin: 0;
+}
 
 .home-nav ul, nav ul {
 	display: none;
@@ -699,12 +729,12 @@ select {
 	top: 120px;
 	background: #ffffff;
 	z-index: 500;
-	width: 86%;
 	height: 300px;
 	box-sizing: border-box;
 	border: 5px solid #084a5c;
 	margin: 0;
-	left: 2%;
+	left: 10px;
+	right: 10px;
 	padding: 0;
 
 }
@@ -716,6 +746,7 @@ select {
 }
 .home-nav ul li a, nav ul li a {
 	color: #084a5c;
+	display: block;
 }
 
 /*mobile seach form*/
@@ -725,6 +756,7 @@ select {
 display: block;
 width: 100%;
 margin-top: 20px;
+box-sizing:border-box;
 }
 .search-content-area {
 	flex-wrap: wrap;
@@ -741,6 +773,15 @@ margin-top: 20px;
 /*about.html mobile*/
 .content-area.about-content article {
 	min-width: 100%;
+	margin-bottom: 15px;
+}
+.user-games .game-item .fa-minus-circle,.library .game-item .fa-plus-circle {
+	display: block;
+	font-size: 40px;
+}
+
+.content-area {
+	margin-top: 120px;
 }
 /*closing bracket for mobile*/
 }
